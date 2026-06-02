@@ -233,7 +233,7 @@ nav a:hover {
 }
 
 #portal h2 {
-    font-size: 3.5rem !important; /* Un poco más grande por ser la apertura */
+    font-size: 3.5rem !important;
     margin-bottom: 30px;
     line-height: 1;
 }
@@ -770,11 +770,7 @@ nav a:hover {
     .dungeon-heroes-title { font-size: 5.5rem; }
     .main-festival-title { font-size: 3.2rem; }
     .hero-location { font-size: 1.2rem; margin-bottom: 15px; }
-    
-    /* Mantenemos los 40px y 20px intactos para resoluciones Desktop */
-    
     .calendar-table .col { padding: 30px 3vw; }
-    
     .hero-card { height: 160px; }
     .hero-card img { width: 160px; height: 160px; }
     .info-invitado { width: calc(100% - 160px); }
@@ -784,7 +780,7 @@ nav a:hover {
 }
 
 /* ===================================================================
-   OPTIMIZACIÓN EXTREMA PARA CELULARES (TÍTULOS CHIQUITOS Y OBLIGADOS)
+   OPTIMIZACIÓN EXTRA PARA EL ANCHO DE CELULARES (UN SOLO RENGLÓN)
    =================================================================== */
 @media (max-width: 768px) {
     
@@ -803,24 +799,24 @@ nav a:hover {
     #hero .hero-text p { font-size: 0.95rem; }
     
     #portal h2 { 
-        font-size: 1.4rem !important; /* ACHICADO A LA FUERZA (Aprox 22px) */
-        letter-spacing: 0px !important;
+        font-size: 1.15rem !important; /* Forzado a una sola linea */
+        letter-spacing: -0.5px !important;
         margin-bottom: 15px; 
     }
     #portal .text-block p { font-size: 0.95rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* TÍTULOS SUPER COMPACTOS PARA ASEGURAR 1 O 2 RENGLONES */
+    /* TÍTULOS EN UN SOLO RENGLÓN COMPACTO */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 1.4rem !important; /* ACHICADO A LA FUERZA (Aprox 22px) */
-        letter-spacing: 0px !important; /* Sin espacio para que no ensanche */
-        padding: 30px 10px 10px 10px !important; 
+        font-size: 1.15rem !important; /* Tamaño exacto para que entre en 1 linea horizontal en 412px */
+        letter-spacing: -0.5px !important; /* Espaciado negativo sutil para estirar palabras */
+        padding: 30px 5px 10px 5px !important; /* Reducimos padding lateral al minimo */
         line-height: 1.1;
+        white-space: nowrap; /* Evita saltos de linea bajo cualquier condicion */
     }
     
-    /* TEXTOS SUPER COMPACTOS PARA MANTENER LA PROPORCIÓN */
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        font-size: 0.95rem !important; /* Aprox 14-15px */
+        font-size: 0.95rem !important; 
         padding: 5px 10px 30px 10px !important;
     }
 
