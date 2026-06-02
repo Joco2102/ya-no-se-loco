@@ -63,7 +63,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: calc(var(--nav-height) + 20px) 20px 40px 20px;
+    padding: calc(var(--nav-height) + 20px) 20px 0px 20px; /* Removido padding bottom que dejaba espacios vacíos */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,6 +76,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1; /* MAGIA 1: Obliga al contenido a estirarse y llenar los espacios vacíos */
 }
 
 .btn-orange {
@@ -273,11 +274,12 @@ nav a:hover {
     margin-bottom: 0;
 }
 
-/* fondos unificados (marrón más claro) */
+/* fondos unificados y eliminación de huecos fantasma */
 #eventos, #mapa, #registro {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
+    padding-bottom: 0 !important; /* MAGIA 2: Mata huecos */
     background-color: #594336; 
 }
 
@@ -285,10 +287,18 @@ nav a:hover {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 0 !important; /* Mata los ladrillos asomados */
     background-image: none !important;
     background-color: #594336 !important;
     width: 100%;
+}
+
+#zonas-actividades {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0 !important; /* Mata el fondo marrón del final */
+    background-color: var(--color-fondo-oscuro); /* Color base por seguridad */
 }
 
 .contenedor-tarjetas {
@@ -296,15 +306,9 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
     width: 100%; 
     max-width: 100%;
-    margin: 0;
+    margin: 80px 0 40px 0; /* MAGIA 3: Baja los invitados y los centra */
     gap: 2px; 
     background-color: transparent; 
-}
-
-#zonas-actividades {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
 }
 
 #eventos .content, #mapa .content, #invitados .content, #zonas-actividades .content, #registro .content {
@@ -320,6 +324,7 @@ nav a:hover {
     text-align: left;
     color: var(--color-texto-negro);
     margin-bottom: 0px;
+    flex-grow: 1; /* MAGIA 4: Estira el cronograma hasta tapar todo el hueco marrón */
 }
 
 .calendar-table .col {
@@ -485,6 +490,8 @@ nav a:hover {
     gap: 30px;
     width: 100%;
     padding: 60px 5vw;
+    margin-top: 60px; /* MAGIA 5: Baja el carrusel en PC */
+    margin-bottom: 40px; 
 }
 
 .carousel-viewport {
@@ -542,7 +549,7 @@ nav a:hover {
 }
 
 /* =========================================================
-   REGISTRO Y FORMULARIO (BLINDADO)
+   REGISTRO Y FORMULARIO
    ========================================================= */
 .form-container {
     width: 100%;
@@ -799,24 +806,22 @@ select#profesion option {
 }
 
 /* ===================================================================
-   OPTIMIZACIÓN PARA CELULARES (AJUSTE DE ESPACIADOS VACÍOS)
+   OPTIMIZACIÓN PARA CELULARES
    =================================================================== */
 @media (max-width: 768px) {
     
-    /* 1. Juntamos la palabra FESTIVAL y DUNGEON HEROES */
     .dungeon-heroes-title {
         font-size: 3.5rem !important;
         letter-spacing: 4px;
-        line-height: 0.8 !important; /* Achica la separación con la palabra de abajo */
-        margin-bottom: 0px !important; /* Quita el margen extra */
+        line-height: 1;
     }
     .main-festival-title { 
         font-size: 1.8rem !important; 
         letter-spacing: 2px;
-        margin-top: 0px !important; /* Pega el texto a la palabra de arriba */
+        margin-top: 5px;
     }
     
-    #hero .hero-location { font-size: 1rem; margin-bottom: 15px; margin-top: 15px; }
+    #hero .hero-location { font-size: 1rem; margin-bottom: 20px; }
     #hero .hero-text p { font-size: 0.95rem; }
     
     #portal h2 { 
@@ -827,24 +832,17 @@ select#profesion option {
     #portal .text-block p { font-size: 0.95rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* 2. y 3. Eliminamos los huecos gigantes entre secciones (padding superior) */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
         font-size: 1.15rem !important; 
         letter-spacing: -0.5px !important; 
-        padding: 20px 5px 5px 5px !important; /* Bajamos el padding top de 60/40 a solo 20px */
+        padding: 30px 5px 10px 5px !important; 
         line-height: 1.1;
         white-space: nowrap; 
     }
     
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
         font-size: 0.95rem !important; 
-        padding: 5px 10px 20px 10px !important; /* Bajamos el padding bottom a solo 20px */
-    }
-
-    /* Reducimos el margen extra arriba del mapa para que suba y tape el hueco */
-    .mapa-contenedor {
-        margin: 20px auto 0 auto !important; /* Bajado de 60px a 20px */
-        padding: 0 10px;
+        padding: 5px 10px 30px 10px !important;
     }
 
     .nav-container { padding: 0 20px; }
@@ -870,7 +868,7 @@ select#profesion option {
     .desktop-only { display: none !important; }
     .mobile-only { display: block !important; }
 
-    .mobile-agenda { width: 100vw; margin-bottom: 0px !important; margin-top: 0; }
+    .mobile-agenda { width: 100vw; margin-bottom: 20px; margin-top: 0; }
     .mobile-agenda details {
         background-color: #f5b76b;
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -899,7 +897,7 @@ select#profesion option {
     .contenedor-tarjetas { 
         grid-template-columns: 1fr; 
         width: 100%; 
-        margin: 0; 
+        margin: 20px 0 0 0 !important; /* Ajuste para celular */
     }
     .hero-card { height: 150px; } 
     .hero-card img { width: 150px; height: 150px; }
@@ -907,7 +905,12 @@ select#profesion option {
     .info-invitado h3 { font-size: 1.3rem; padding: 15px 15px 2px 15px; }
     .info-invitado p { padding: 0 15px 10px 15px; font-size: 0.75rem; }
 
-    .carousel { padding: 40px 5px; gap: 5px; }
+    .carousel { 
+        padding: 40px 5px; 
+        gap: 5px; 
+        margin-top: 20px !important; /* Ajuste carrusel en celular */
+        margin-bottom: 20px !important; 
+    }
     .carousel-viewport { max-width: 320px; }
     .card-actividad { width: 320px; padding: 15px; }
     .card-actividad img { height: 230px; }
