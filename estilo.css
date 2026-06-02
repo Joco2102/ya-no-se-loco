@@ -558,14 +558,18 @@ nav a:hover {
 
 .input-group input,
 .input-group select {
-    padding: 15px 20px; 
+    padding: 15px 20px;
     border: none;
     border-radius: 8px;
     background-color: var(--color-fondo-claro);
     font-size: 1rem;
     font-family: var(--fuente-principal);
-    color: var(--color-texto-negro);
+    color: #555555; /* gris oscuro */
     width: 100%;
+}
+
+.input-group select option {
+    color: #555555;
 }
 
 .form-container .btn-orange {
