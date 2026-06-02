@@ -405,7 +405,7 @@ nav a:hover {
 }
 
 .mapa-aviso {
-    background-color: #583e28;
+    background-color: #583e28; /* Marrón exacto del fondo de la imagen */
     color: var(--color-texto-blanco);
     width: 100%;
     margin-top: 15px;
@@ -806,23 +806,23 @@ nav a:hover {
     #hero .hero-text p { font-size: 1rem; }
     
     #portal h2 { 
-        font-size: 2.8rem !important; /* TITULO MÁS GRANDE */
+        font-size: 2.2rem !important; /* TITULO PUNTO MEDIO */
         letter-spacing: 1px !important;
         margin-bottom: 20px; 
     }
     #portal .text-block p { font-size: 1rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* TITULOS MÁS GRANDES PERO CON MENOS MARGEN LATERAL PARA ENTRAR EN 2 RENGLONES */
+    /* TITULOS PUNTO MEDIO PARA QUE ENTREN EN MÁXIMO 2 RENGLONES */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 2.4rem !important; /* Aumentado a 2.4rem para que destaque mucho más */
+        font-size: 1.9rem !important; /* Aumentamos de 1.3 a 1.9 para que destaquen sin exagerar */
         letter-spacing: 1px !important; 
-        padding: 40px 10px 10px 10px !important; /* Padding mínimo de 10px a los lados */
+        padding: 40px 15px 10px 15px !important; /* Ajuste sutil de padding */
         line-height: 1.1;
     }
     
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        padding: 10px 10px 40px 10px !important;
+        padding: 10px 15px 40px 15px !important;
         font-size: 1rem !important;
     }
 
