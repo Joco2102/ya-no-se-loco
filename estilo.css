@@ -57,7 +57,7 @@ img {
 }
 
 .full-page {
-    min-height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -287,7 +287,7 @@ nav a:hover {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    padding-bottom: 0 !important; /* Mata los ladrillos asomados */
+    padding-bottom: 30px !important;
     background-image: none !important;
     background-color: #594336 !important;
     width: 100%;
@@ -399,7 +399,7 @@ nav a:hover {
 
 /* mapita */
 #mapa {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 .mapa-contenedor {
