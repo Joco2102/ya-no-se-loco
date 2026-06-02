@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Dungeon Heroes</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- nav -->
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="#hero"><img src="imagenes/ignlogo.jpeg" alt="IGN Logo" class="logo-img"></a>
+            
+            <div class="hamburger-menu" id="btn-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul id="nav-links">
+                <li><a href="#invitados">INVITADOS</a></li>
+                <li><a href="#eventos">EVENTOS</a></li>
+                <li><a href="#registro">PARTICIPÁ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- hero -->
+        <section id="hero" class="full-page hero-bg">
+            <div class="content">
+                <h1 class="hero-title">
+                    <span class="dungeon-heroes-title">FESTIVAL</span><br>
+                    <span class="main-festival-title">DUNGEON HEROES</span>
+                </h1>
+                <div class="hero-text">
+                    <p>Probá. Explorá. Descubrí.</p>
+                    <p>Los mejores RPG te esperan con demos, desafíos y nuevas historias.</p>
+                    <p>Tu próxima aventura empieza acá.</p>
+                </div>
+                <a href="#registro" class="btn-orange">¡RECLAMÁ TU PASE DE BATALLA!</a>
+            </div>
+        </section>
+
+        <!-- portal -->
+        <section id="portal" class="full-page brick-bg">
+            <div class="content">
+                <h2>UN PORTAL A NUEVOS MUNDOS</h2>
+                <div class="text-block">
+                    <p>Dungeon Heroes es el evento donde los RPG<br>cobran vida</p>
+                    <p>Durante tres días, IGN reúne demos exclusivas,<br>descuentos y experiencias únicas para que<br>explores historias profundas y combates<br>intensos.</p>
+                    <p>Descubrí joyas ocultas, probá lanzamientos y<br>encontrá tu próxima aventura.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- eventos -->
+        <section id="eventos" class="full-page">
+            <div class="content">
+                <h2>TU HOJA DE RUTA POR EL REINO</h2>
+                <p class="subtitle desktop-only">No pierdas el rastro de tu próximo objetivo</p>
+                <p class="subtitle mobile-only">Toca la flecha para descubrir los horarios del evento</p>
+
+                <div class="calendar-table desktop-only">
+                    <div class="col day-1">
+                        <div class="col-header">
+                            <h3>VIERNES</h3>
+                            <p>24/07 12:00 a 20:00HS</p>
+                        </div>
+                        <ul>
+                            <li><strong>12:00</strong> <span>[APERTURA] Apertura de puertas (SERVICIOS)</span></li>
+                            <li><strong>12:30</strong> <span>[DEMO] Heartopia: Trailer exclusivo y gameplay (2)</span></li>
+                            <li><strong>13:00</strong> <span>[RECREATIVA] Desafío 1v1 Duelos rápidos (1)</span></li>
+                            <li><strong>14:15</strong> <span>[PANEL] Yapura Meri: El arte de la ilustración digital (4)</span></li>
+                            <li><strong>15:00</strong> <span>[RECREATIVA] Desafío 1v1 Duelos rápidos (3)</span></li>
+                            <li><strong>15:45</strong> <span>[SORTEO] Sorteo de Códigos de Steam (6)</span></li>
+                            <li><strong>16:30</strong> <span>[DEMO] Animalia: Trailer y datos exclusivos (7)</span></li>
+                            <li><strong>17:15</strong> <span>[PANEL] Joseju: Análisis y diseño de videojuegos (8)</span></li>
+                            <li><strong>18:30</strong> <span>[SORTEO] Sorteo de Códigos de Steam (9)</span></li>
+                            <li><strong>19:15</strong> <span>[COSPLAY] Cosplay Categoría Fantasía (1)</span></li>
+                            <li><strong>20:00</strong> <span>[PANEL] Juegos Retro: Joyas ocultas de los 80s y 90s (3)</span></li>
+                            <li><strong>20:00</strong> <span>[CIERRE] Cierre de la primera jornada (4)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="col day-2">
+                        <div class="col-header">
+                            <h3>SÁBADO</h3>
+                            <p>25/07 10:00 a 21:00HS</p>
+                        </div>
+                        <ul>
+                            <li><strong>12:00</strong> <span>[APERTURA] Apertura de puertas (1)</span></li>
+                            <li><strong>12:30</strong> <span>[LANZAMIENTO] Riot Games: Próximas novedades (3)</span></li>
+                            <li><strong>13:00</strong> <span>[RECREATIVA] Desafío 1v1 Duelos rápidos (2)</span></li>
+                            <li><strong>14:15</strong> <span>[SORTEO] Sorteo de Códigos de Steam (5)</span></li>
+                            <li><strong>15:00</strong> <span>[DEMO] Magicraft: mecánicas de combate (4)</span></li>
+                            <li><strong>15:45</strong> <span>[PANEL] Edu Camps: Cómo meterse en la industria (8)</span></li>
+                            <li><strong>16:30</strong> <span>[DEMO] Reanimal: Revelación exclusiva de gameplay (9)</span></li>
+                            <li><strong>17:15</strong> <span>[PANEL] Jessica Ángeles: El detrás de escena del doblaje (6)</span></li>
+                            <li><strong>18:30</strong> <span>[SORTEO] Sorteo de Códigos de Steam (7)</span></li>
+                            <li><strong>19:15</strong> <span>[COSPLAY] Cosplay de Princesas y Héroes (1)</span></li>
+                            <li><strong>20:00</strong> <span>[CIERRE] Cierre de la segunda jornada (3)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="col day-3">
+                        <div class="col-header">
+                            <h3>DOMINGO</h3>
+                            <p>26/07 10:00 a 20:00HS</p>
+                        </div>
+                        <ul>
+                            <li><strong>12:00</strong> <span>[APERTURA] Apertura de puertas de la jornada final (4)</span></li>
+                            <li><strong>12:30</strong> <span>[RECREATIVA] Gran Final del Torneo Relámpago (3)</span></li>
+                            <li><strong>13:00</strong> <span>[DEMO] Hela: Primer vistazo al Acceso Anticipado (2)</span></li>
+                            <li><strong>14:15</strong> <span>[PANEL] Hidetaka Miyazaki: Filosofía de diseño y mundos oscuros (9)</span></li>
+                            <li><strong>15:00</strong> <span>[SORTEO] Sorteo de Códigos de Steam (1)</span></li>
+                            <li><strong>15:45</strong> <span>[DEMO] Big Walk: Cooperativo caótico en vivo (3)</span></li>
+                            <li><strong>16:30</strong> <span>[COSPLAY] Gran Concurso de Cosplay: Premiación Principal (8)</span></li>
+                            <li><strong>17:15</strong> <span>[SORTEO] Gran Sorteo de Códigos (7)</span></li>
+                            <li><strong>18:30</strong> <span>[PANEL] Hironobu Sakaguchi: El legado y el futuro del JRPG (8)</span></li>
+                            <li><strong>19:15</strong> <span>[LANZAMIENTO] Ubisoft: Showcase de próximos títulos (9)</span></li>
+                            <li><strong>20:00</strong> <span>[CIERRE] Cierre oficial del evento (5)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mobile-agenda mobile-only">
+                    <details>
+                        <summary>
+                            <div class="summary-content">
+                                <div class="text-dia"><strong>VIERNES</strong><span>24/07 12:00 a 20:00HS</span></div>
+                                <span class="icon-arrow"></span>
+                            </div>
+                        </summary>
+                        <div class="panel-desplegable">
+                            <ul>
+                                <li><strong>12:00</strong> <span>[APERTURA] Apertura de puertas (SERVICIOS)</span></li>
+                                <li><strong>12:30</strong> <span>[DEMO] Heartopia: Trailer exclusivo y gameplay (1)</span></li>
+                                <li><strong>13:00</strong> <span>[RECREATIVA] Desafío 1v1 Duelos rápidos (3)</span></li>
+                                <li><strong>14:15</strong> <span>[PANEL] Yapura Meri: El arte de la ilustración digital (2)</span></li>
+                                <li><strong>15:00</strong> <span>[RECREATIVA] Desafío 1v1 Duelos rápidos (5)</span></li>
+                                <li><strong>15:45</strong> <span>[SORTEO] Sorteo de Códigos de Steam (6)</span></li>
+                                <li><strong>16:30</strong> <span>[DEMO] Animalia: Trailer y datos exclusivos (9)</span></li>
+                                <li><strong>17:15</strong> <span>[PANEL] Joseju: Análisis y diseño de videojuegos ()</span></li>
+                                <li><strong>18:30</strong> <span>[SORTEO] Sorteo de Códigos de Steam (8)</span></li>
+                                <li><strong>19:15</strong> <span>[COSPLAY] Cosplay Categoría Fantasía (5)</span></li>
+                                <li><strong>20:00</strong> <span>[PANEL] Juegos Retro: Joyas ocultas de los 80s y 90s (3)</span></li>
+                                <li><strong>20:00</strong> <span>[CIERRE] Cierre de la primera jornada (2)</span></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>
+                            <div class="summary-content">
+                                <div class="text-dia"><strong>SÁBADO</strong><span>25/07 10:00 a 21:00HS</span></div>
+                                <span class="icon-arrow"></span>
+                            </div>
+                        </summary>
+                        <div class="panel-desplegable">
+                            <ul>
+                                <li><strong>12:00</strong> <span>[APERTURA] Apertura de puertas (3)</span></li>
+                                <li><strong>12:30</strong> <span>[LANZAMIENTO] Riot Games: Próximas novedades (2)</span></li>
+                                <li><strong>13:00</strong> <span>[RECREATIVA] Desafío 1v1 Duelos rápidos (6)</span></li>
+                                <li><strong>14:15</strong> <span>[SORTEO] Sorteo de Códigos de Steam (7)</span></li>
+                                <li><strong>15:00</strong> <span>[DEMO] Magicraft: mecánicas de combate (5)</span></li>
+                                <li><strong>15:45</strong> <span>[PANEL] Edu Camps: Cómo meterse en la industria (8)</span></li>
+                                <li><strong>16:30</strong> <span>[DEMO] Reanimal: Revelación exclusiva de gameplay (3)</span></li>
+                                <li><strong>17:15</strong> <span>[PANEL] Jessica Ángeles: El detrás de escena del doblaje (4)</span></li>
+                                <li><strong>18:30</strong> <span>[SORTEO] Sorteo de Códigos de Steam (1)</span></li>
+                                <li><strong>19:15</strong> <span>[COSPLAY] Cosplay de Princesas y Héroes (4)</span></li>
+                                <li><strong>20:00</strong> <span>[CIERRE] Cierre de la segunda jornada (2)</span></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>
+                            <div class="summary-content">
+                                <div class="text-dia"><strong>DOMINGO</strong><span>26/07 10:00 a 20:00HS</span></div>
+                                <span class="icon-arrow"></span>
+                            </div>
+                        </summary>
+                        <div class="panel-desplegable">
+                            <ul>
+                                <li><strong>12:00</strong> <span>[APERTURA] Apertura de puertas de la jornada final (2)</span></li>
+                                <li><strong>12:30</strong> <span>[RECREATIVA] Gran Final del Torneo Relámpago (5)</span></li>
+                                <li><strong>13:00</strong> <span>[DEMO] Hela: Primer vistazo al Acceso Anticipado (3)</span></li>
+                                <li><strong>14:15</strong> <span>[PANEL] Hidetaka Miyazaki: Filosofía de diseño y mundos oscuros (1)</span></li>
+                                <li><strong>15:00</strong> <span>[SORTEO] Sorteo de Códigos de Steam (4)</span></li>
+                                <li><strong>15:45</strong> <span>[DEMO] Big Walk: Cooperativo caótico en vivo (6)</span></li>
+                                <li><strong>16:30</strong> <span>[COSPLAY] Gran Concurso de Cosplay: Premiación Principal (8)</span></li>
+                                <li><strong>17:15</strong> <span>[SORTEO] Gran Sorteo de Códigos (9)</span></li>
+                                <li><strong>18:30</strong> <span>[PANEL] Hironobu Sakaguchi: El legado y el futuro del JRPG (7)</span></li>
+                                <li><strong>19:15</strong> <span>[LANZAMIENTO] Ubisoft: Showcase de próximos títulos (1)</span></li>
+                                <li><strong>20:00</strong> <span>[CIERRE] Cierre oficial del evento (5)</span></li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- mapita -->
+        <section id="mapa" class="full-page">
+            <div class="content">
+                <h2>TABLERO DE AVENTURAS</h2>
+                <p class="subtitle">Ubica los puntos de interés y planifica tu ruta</p>
+                <div class="mapa-contenedor">
+                    <img src="imagenes/MAPA (1).png" alt="Mapa del evento Centro Costa Salguero" id="img-mapa" style="cursor: pointer;">
+                </div>
+                <div class="mapa-aviso mobile-only">
+                    <p>Para una mejor visualización del mapa, toca la imagen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- invitados -->
+        <section id="invitados" class="full-page">
+            <div class="content">
+                <h2>HÉROES QUE MARCARON HISTORIA</h2>
+                <p class="subtitle">Conoce a las Leyendas del Gremio</p>
+
+                <div class="contenedor-tarjetas">
+                    <article class="hero-card">
+                        <img src="imagenes/hirobu.webp" alt="Hironobu Sakaguchi">
+                        <div class="info-invitado">
+                            <h3>HIRONOBU SAKAGUCHI</h3>
+                            <p>DIRECTOR Y PRODUCTOR DE FINAL FANTASY</p>
+                            <span class="tag">INVITADO INTERNACIONAL</span>
+                        </div>
+                    </article>
+
+                    <article class="hero-card">
+                        <img src="imagenes/hidetaka 1.png" alt="Hidetaka Miyazaki">
+                        <div class="info-invitado">
+                            <h3>HIDETAKA MIYAZAKI</h3>
+                            <p>CREADOR DE LA SAGA DARK SOULS</p>
+                            <span class="tag">INVITADO INTERNACIONAL</span>
+                        </div>
+                    </article>
+
+                    <article class="hero-card">
+                        <img src="imagenes/joseju.jpg" alt="Joseju">
+                        <div class="info-invitado">
+                            <h3>JOSEJU</h3>
+                            <p>JUGADOR<br>STREAMER</p>
+                            <span class="tag">INVITADO INTERNACIONAL</span>
+                        </div>
+                    </article>
+
+                    <article class="hero-card">
+                        <img src="imagenes/jesica angeles.png" alt="Jessica Angeles">
+                        <div class="info-invitado">
+                            <h3>JESSICA ANGELES</h3>
+                            <p>VOZ DE ZELDA EN THE LEGEND OF ZELDA:<br>BREATH OF THE WILD</p>
+                            <span class="tag">INVITADA ESPECIAL</span>
+                        </div>
+                    </article>
+
+                    <article class="hero-card">
+                        <img src="imagenes/edu camps.jpg" alt="Edu Camps">
+                        <div class="info-invitado">
+                            <h3>EDU CAMPS</h3>
+                            <p>YOUTUBER</p>
+                            <span class="tag">INVITADO INTERNACIONAL</span>
+                        </div>
+                    </article>
+
+                    <article class="hero-card">
+                        <img src="imagenes/yapura.jpg" alt="Yapura Meri">
+                        <div class="info-invitado">
+                            <h3>YAPURA MERI</h3>
+                            <p>YOUTUBER</p>
+                            <span class="tag">INVITADA ESPECIAL</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- carrusel -->
+        <section id="zonas-actividades" class="full-page brick-bg">
+            <div class="content">
+                <h2>DESAFIA A LA MAZMORRA</h2>
+                <p class="subtitle">Enfrentate a nuevas aventuras</p>
+                <div class="carousel">
+                    <button type="button" class="arrow prev-btn" aria-label="Anterior">&lt;</button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <article class="card-actividad">
+                                <img src="imagenes/meetandgreet.png" alt="Meet & Greet">
+                                <h3>MEET & GREET</h3>
+                            </article>
+                            <article class="card-actividad">
+                                <img src="imagenes/zondejuegos.png" alt="Zona de Juegos">
+                                <h3>ZONA DE JUEGOS</h3>
+                            </article>
+                            <article class="card-actividad">
+                                <img src="imagenes/stands.png" alt="Stands">
+                                <h3>STANDS</h3>
+                            </article>
+                            <article class="card-actividad">
+                                <img src="imagenes/zonarecreativa.jpg" alt="Zona Recreativa">
+                                <h3>ZONA RECREATIVA</h3>
+                            </article>
+                            <article class="card-actividad">
+                                <img src="imagenes/concursocosplay.jpeg" alt="Concurso de Cosplay">
+                                <h3>CONCURSO DE COSPLAY</h3>
+                            </article>
+                            <article class="card-actividad">
+                                <img src="imagenes/sorteo.png" alt="Sorteo de Codigos">
+                                <h3>SORTEO DE CODIGOS</h3>
+                            </article>
+                        </div>
+                    </div>
+                    <button type="button" class="arrow next-btn" aria-label="Siguiente">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- registro -->
+        <section id="registro" class="full-page">
+            <div class="content">
+                <h2>CONVIERTETE EN LEYENDA</h2>
+                <p class="subtitle">Se parte de nuestra historia, crea tu personaje ideal</p>
+                <form id="formulario-inscripcion" action="#" method="POST" class="form-container">
+                    <div class="input-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe el nombre de tu personaje" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="Escribe tu correo electrónico" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="raza">Raza</label>
+                        <select id="raza" name="raza" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Humano">Humano</option>
+                            <option value="Elfo">Elfo</option>
+                            <option value="Enano">Enano</option>
+                            <option value="Ogro">Ogro</option>
+                            <option value="Golems">Golem</option>
+                            <option value="Hada">Hada</option>
+                            <option value="Centauros">Centauros</option>
+                            <option value="Razas Felinas">Razas Felinas</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="profesion">Profesión</label>
+                        <select id="profesion" name="profesion" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Herrero">Herrero</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Mago">Mago</option>
+                            <option value="Comerciante">Comerciante</option>
+                            <option value="Pícaro">Pícaro</option>
+                            <option value="Cazador">Cazador</option>
+                            <option value="Sacerdote">Sacerdote</option>
+                            <option value="Paladín">Paladín</option>
+                            <option value="Bardo">Bardo</option>
+                            <option value="Nigromante">Nigromante</option>
+                            <option value="Alquimista">Alquimista</option>
+                            <option value="Brujo">Brujo</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-orange">GUARDAR PARTIDA</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>©FESTIVAL DUNGEON HEROS</p>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-col footer-ayuda">
+                    <h3>AYUDA</h3>
+                    <a href="#">Terminos y Condiciones</a>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="footer-col footer-social">
+                    <h3>SOCIAL</h3>
+                    <div class="social-links">
+                        <a href="#"><img src="imagenes/xlogo.jpeg" alt="X"></a>
+                        <a href="#"><img src="imagenes/youtube logo.jpeg" alt="Youtube"></a>
+                        <a href="#"><img src="imagenes/instalogo.jpeg" alt="Instagram"></a>
+                        <a href="#"><img src="imagenes/tiktoklogo.jpeg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="footer-col footer-sponsors">
+                    <img src="imagenes/ignlogo.jpeg" alt="IGN" class="logo-ign">
+                    <img src="imagenes/steamlogo.png" alt="Steam" class="logo-steam">
+                    <img src="imagenes/itchiologo.png" alt="Itch.io" class="logo-itch">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        btnMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+     const track = document.querySelector(".carousel-track");
+     const prevBtn = document.querySelector(".prev-btn");
+     const nextBtn = document.querySelector(".next-btn");
+
+     let index = 0;
+     let isTransitioning = false;
+
+        function getItemsData() {
+            const items = document.querySelectorAll(".card-actividad");
+            const viewport = document.querySelector(".carousel-viewport");
+            if (items.length === 0) return null;
+            const style = window.getComputedStyle(track);
+            const gap = parseInt(style.columnGap) || 0;
+            const itemWidth = items[0].offsetWidth + gap;
+            const itemsInView = Math.floor(viewport.offsetWidth / itemWidth);
+            const maxIndex = Math.max(0, items.length - itemsInView);
+            return { items, itemWidth, maxIndex };
+        }
+        function setupInfiniteCarousel() {
+        const cards = document.querySelectorAll(".card-actividad");
+
+        cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add("clone");
+        track.appendChild(clone);
+    });
+}
+
+     function updateCarousel() {
+     const data = getItemsData();
+     if (!data) return;
+
+    track.style.transform =
+        `translateX(-${index * data.itemWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+    if (isTransitioning) return;
+
+    const cards = document.querySelectorAll(".card-actividad");
+    const originalCards = cards.length / 2;
+
+    index++;
+    updateCarousel();
+
+    if (index >= originalCards) {
+        isTransitioning = true;
+
+        setTimeout(() => {
+            track.style.transition = "none";
+            index = 0;
+            updateCarousel();
+
+            track.offsetHeight;
+
+            track.style.transition = "transform 0.5s ease-in-out";
+            isTransitioning = false;
+        }, 500);
+    }
+});
+
+     prevBtn.addEventListener("click", () => {
+    if (isTransitioning) return;
+
+    const cards = document.querySelectorAll(".card-actividad");
+    const originalCards = cards.length / 2;
+
+    if (index <= 0) {
+        track.style.transition = "none";
+        index = originalCards;
+        updateCarousel();
+
+        track.offsetHeight;
+
+        track.style.transition = "transform 0.5s ease-in-out";
+    }
+
+    index--;
+    updateCarousel();
+});
+
+        window.addEventListener("resize", updateCarousel);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupInfiniteCarousel();
+            const form = document.getElementById('formulario-inscripcion');
+            const modalAgradecimiento = document.getElementById('modal-agradecimiento');
+            const btnCerrarForm = document.getElementById('btn-cerrar-modal');
+
+            const dynNombre = document.getElementById('dyn-nombre');
+            const dynRaza = document.getElementById('dyn-raza');
+            const dynProfesion = document.getElementById('dyn-profesion');
+            const dynCorreo = document.getElementById('dyn-correo');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                dynNombre.textContent = document.getElementById('nombre').value;
+                dynRaza.textContent = document.getElementById('raza').value;
+                dynProfesion.textContent = document.getElementById('profesion').value;
+                dynCorreo.textContent = document.getElementById('correo').value;
+                modalAgradecimiento.style.display = 'flex';
+                form.reset();
+            });
+
+            btnCerrarForm.addEventListener('click', () => {
+                modalAgradecimiento.style.display = 'none';
+            });
+
+            const imgMapa = document.getElementById('img-mapa');
+            const modalMapa = document.getElementById('modal-mapa-ampliado');
+            const btnCerrarMapa = document.getElementById('btn-cerrar-mapa');
+
+            imgMapa.addEventListener('click', () => {
+                modalMapa.style.display = 'flex';
+            });
+
+            btnCerrarMapa.addEventListener('click', () => {
+                modalMapa.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modalAgradecimiento) modalAgradecimiento.style.display = 'none';
+                if (e.target === modalMapa) modalMapa.style.display = 'none';
+            });
+        });
+    </script>
+    
+    <!-- modales -->
+    <div id="modal-agradecimiento" class="modal-overlay">
+        <div class="modal-box modal-beige">
+            <span class="close-modal" id="btn-cerrar-modal">&times;</span>
+            <h3 class="modal-titulo-dinamico">Gracias <span id="dyn-nombre"></span>, ¡ahora eres un <span id="dyn-raza"></span> <span id="dyn-profesion"></span>!</h3>
+            <p class="modal-texto-dinamico">Se le enviara al correo <span id="dyn-correo" style="font-weight: 700; color: #444;"></span> un QR que tendras que mostrar al momento de ingresar al evento</p>
+        </div>
+    </div>
+
+    <div id="modal-mapa-ampliado" class="modal-overlay">
+        <span class="close-modal" id="btn-cerrar-mapa">&times;</span>
+        <img src="imagenes/MAPA (1).png" alt="Mapa ampliado" class="mapa-zoom">
+    </div>
+    
+</body>
+</html>
