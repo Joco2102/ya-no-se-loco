@@ -233,7 +233,7 @@ nav a:hover {
 }
 
 #portal h2 {
-    font-size: 3.5rem !important;
+    font-size: 3.5rem !important; 
     margin-bottom: 30px;
     line-height: 1;
 }
@@ -541,7 +541,9 @@ nav a:hover {
     line-height: 1;
 }
 
-/* registro */
+/* =========================================================
+   REGISTRO Y FORMULARIO (BLINDADO)
+   ========================================================= */
 .form-container {
     width: 100%;
     max-width: 600px; 
@@ -564,23 +566,33 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
+/* Blindamos inputs y específicamente los selects con sus IDs para que obedezcan sí o sí */
 .input-group input,
-.input-group select {
+.input-group select,
+select#raza,
+select#profesion {
     padding: 15px 20px; 
     border: none;
     border-radius: 8px;
-    background-color: var(--color-fondo-claro);
+    background-color: var(--color-fondo-claro) !important;
     font-size: 1rem;
     font-family: var(--fuente-principal);
-    color: #555555; /* Gris oscuro suave, no negro full */
+    color: #555555 !important; /* Gris oscuro para todos */
     width: 100%;
 }
+
+/* El placeholder (texto de ayuda fantasma) en gris oscuro */
 .input-group input::placeholder {
-    color: #555555;
+    color: #555555 !important;
+    opacity: 1;
 }
-.input-group select option {
-    color: #555555;
-    background-color: var(--color-fondo-claro);
+
+/* Forzamos que la cajita que se despliega (las opciones) tenga letras grises y fondo claro */
+.input-group select option,
+select#raza option,
+select#profesion option {
+    color: #555555 !important;
+    background-color: var(--color-fondo-claro) !important;
 }
 
 .form-container .btn-orange {
@@ -806,20 +818,19 @@ nav a:hover {
     #hero .hero-text p { font-size: 0.95rem; }
     
     #portal h2 { 
-        font-size: 1.15rem !important; /* Forzado a una sola linea */
+        font-size: 1.15rem !important;
         letter-spacing: -0.5px !important;
         margin-bottom: 15px; 
     }
     #portal .text-block p { font-size: 0.95rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* TÍTULOS EN UN SOLO RENGLÓN COMPACTO */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 1.15rem !important; /* Tamaño exacto para que entre en 1 linea horizontal en 412px */
-        letter-spacing: -0.5px !important; /* Espaciado negativo sutil para estirar palabras */
-        padding: 30px 5px 10px 5px !important; /* Reducimos padding lateral al minimo */
+        font-size: 1.15rem !important; 
+        letter-spacing: -0.5px !important; 
+        padding: 30px 5px 10px 5px !important; 
         line-height: 1.1;
-        white-space: nowrap; /* Evita saltos de linea bajo cualquier condicion */
+        white-space: nowrap; 
     }
     
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
