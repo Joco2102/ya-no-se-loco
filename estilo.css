@@ -226,7 +226,7 @@ nav a:hover {
 }
 
 #portal .content {
-    transform: translateY(-60px);
+    transform: none;
 }
 
 #portal h2 {
@@ -794,6 +794,39 @@ nav a:hover {
    OPTIMIZACIÓN EXCLUSIVA PARA CELULARES (MOBILE 412x917)
 =================================================================== */
 @media (max-width: 768px) {
+    /* ===========================
+   MOBILE SIN ESPACIOS VACÍOS
+=========================== */
+
+.full-page {
+    min-height: 100vh;
+    padding-top: calc(var(--nav-height) + 20px);
+    padding-bottom: 20px;
+}
+
+#portal .content {
+    min-height: auto;
+}
+
+#eventos,
+#invitados,
+#zonas-actividades {
+    min-height: auto;
+}
+
+.mobile-agenda {
+    margin-bottom: 0;
+}
+
+.carousel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
     
     .dungeon-heroes-title {
         font-size: 3.8rem !important;
@@ -906,4 +939,45 @@ nav a:hover {
     .modal-beige { padding: 40px 20px; }
     .modal-titulo-dinamico { font-size: 1.5rem; }
     .modal-texto-dinamico { font-size: 1rem; }
+    
+}
+/* ===========================
+   SECCIONES A PANTALLA COMPLETA
+=========================== */
+
+#portal,
+#eventos,
+#invitados,
+#zonas-actividades {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Portal */
+#portal .content {
+    transform: none;
+    min-height: calc(100vh - var(--nav-height));
+    justify-content: center;
+}
+
+/* Cronograma */
+#eventos .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Invitados */
+#invitados .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Carrusel */
+#zonas-actividades .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
