@@ -784,43 +784,44 @@ nav a:hover {
 }
 
 /* ===================================================================
-   OPTIMIZACIÓN PARA CELULARES (1 O 2 RENGLONES MÁXIMO)
+   OPTIMIZACIÓN EXTREMA PARA CELULARES (TÍTULOS CHIQUITOS Y OBLIGADOS)
    =================================================================== */
 @media (max-width: 768px) {
     
     .dungeon-heroes-title {
-        font-size: 3.8rem !important;
+        font-size: 3.5rem !important;
         letter-spacing: 4px;
         line-height: 1;
     }
     .main-festival-title { 
-        font-size: 2.1rem !important; 
-        letter-spacing: 3px;
+        font-size: 1.8rem !important; 
+        letter-spacing: 2px;
         margin-top: 5px;
     }
     
-    #hero .hero-location { font-size: 1.1rem; margin-bottom: 20px; }
-    #hero .hero-text p { font-size: 1rem; }
+    #hero .hero-location { font-size: 1rem; margin-bottom: 20px; }
+    #hero .hero-text p { font-size: 0.95rem; }
     
     #portal h2 { 
-        font-size: 1.75rem !important; /* Achicamos a 28px para que entre perfecto */
-        letter-spacing: 1px !important;
-        margin-bottom: 20px; 
+        font-size: 1.4rem !important; /* ACHICADO A LA FUERZA (Aprox 22px) */
+        letter-spacing: 0px !important;
+        margin-bottom: 15px; 
     }
-    #portal .text-block p { font-size: 1.125rem !important; margin-bottom: 20px; }
+    #portal .text-block p { font-size: 0.95rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* TITULOS CALCULADOS PARA 1 o 2 RENGLONES MÁXIMO */
+    /* TÍTULOS SUPER COMPACTOS PARA ASEGURAR 1 O 2 RENGLONES */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 1.75rem !important; /* 28px: El punto de equilibrio ideal */
-        letter-spacing: 1px !important; /* Texto un poquito más compacto */
-        padding: 40px 10px 10px 10px !important; 
+        font-size: 1.4rem !important; /* ACHICADO A LA FUERZA (Aprox 22px) */
+        letter-spacing: 0px !important; /* Sin espacio para que no ensanche */
+        padding: 30px 10px 10px 10px !important; 
         line-height: 1.1;
     }
     
+    /* TEXTOS SUPER COMPACTOS PARA MANTENER LA PROPORCIÓN */
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        font-size: 1.125rem !important; 
-        padding: 10px 10px 40px 10px !important;
+        font-size: 0.95rem !important; /* Aprox 14-15px */
+        padding: 5px 10px 30px 10px !important;
     }
 
     .nav-container { padding: 0 20px; }
