@@ -61,9 +61,9 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* ESTA ES LA LÍNEA MÁGICA QUE FALTA */
     text-align: center;
-    padding: calc(var(--nav-height) + 20px) 20px 0px 20px;
+    /* CAMBIO: padding inferior en 40px para equilibrar */
+    padding: calc(var(--nav-height) + 20px) 20px 40px 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,6 +76,9 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* CAMBIO: flex-grow y justify-content para centrar verticalmente */
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .btn-orange {
@@ -230,9 +233,7 @@ nav a:hover {
     background-image: url('imagenes/imagen\ de\ fondo\ pagina2-3-4.jpeg');
 }
 
-#portal .content {
-    transform: translateY(-60px);
-}
+/* CAMBIO: Se eliminó el translateY(-60px) de #portal .content */
 
 #portal h2 {
     font-size: 3.5rem !important; 
@@ -307,7 +308,8 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     max-width: 100%;
-    margin: 120px 0 0 0;
+    /* CAMBIO: margin-top bajó de 120px a 40px */
+    margin: 40px 0 0 0;
     gap: 2px;
     background-color: transparent;
 }
@@ -491,7 +493,8 @@ nav a:hover {
     gap: 30px;
     width: 100%;
     padding: 60px 5vw;
-    margin-top: 120px;
+    /* CAMBIO: margin-top bajó de 120px a 40px */
+    margin-top: 40px;
     margin-bottom: 0;
 }
 
