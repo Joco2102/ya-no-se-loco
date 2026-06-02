@@ -566,7 +566,6 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
-/* Blindamos inputs y específicamente los selects con sus IDs para que obedezcan sí o sí */
 .input-group input,
 .input-group select,
 select#raza,
@@ -577,17 +576,18 @@ select#profesion {
     background-color: var(--color-fondo-claro) !important;
     font-size: 1rem;
     font-family: var(--fuente-principal);
-    color: #555555 !important; /* Gris oscuro para todos */
+    color: #555555 !important; 
     width: 100%;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
 }
 
-/* El placeholder (texto de ayuda fantasma) en gris oscuro */
 .input-group input::placeholder {
     color: #555555 !important;
     opacity: 1;
 }
 
-/* Forzamos que la cajita que se despliega (las opciones) tenga letras grises y fondo claro */
 .input-group select option,
 select#raza option,
 select#profesion option {
@@ -799,22 +799,24 @@ select#profesion option {
 }
 
 /* ===================================================================
-   OPTIMIZACIÓN EXTRA PARA EL ANCHO DE CELULARES (UN SOLO RENGLÓN)
+   OPTIMIZACIÓN PARA CELULARES (AJUSTE DE ESPACIADOS VACÍOS)
    =================================================================== */
 @media (max-width: 768px) {
     
+    /* 1. Juntamos la palabra FESTIVAL y DUNGEON HEROES */
     .dungeon-heroes-title {
         font-size: 3.5rem !important;
         letter-spacing: 4px;
-        line-height: 1;
+        line-height: 0.8 !important; /* Achica la separación con la palabra de abajo */
+        margin-bottom: 0px !important; /* Quita el margen extra */
     }
     .main-festival-title { 
         font-size: 1.8rem !important; 
         letter-spacing: 2px;
-        margin-top: 5px;
+        margin-top: 0px !important; /* Pega el texto a la palabra de arriba */
     }
     
-    #hero .hero-location { font-size: 1rem; margin-bottom: 20px; }
+    #hero .hero-location { font-size: 1rem; margin-bottom: 15px; margin-top: 15px; }
     #hero .hero-text p { font-size: 0.95rem; }
     
     #portal h2 { 
@@ -825,17 +827,24 @@ select#profesion option {
     #portal .text-block p { font-size: 0.95rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
+    /* 2. y 3. Eliminamos los huecos gigantes entre secciones (padding superior) */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
         font-size: 1.15rem !important; 
         letter-spacing: -0.5px !important; 
-        padding: 30px 5px 10px 5px !important; 
+        padding: 20px 5px 5px 5px !important; /* Bajamos el padding top de 60/40 a solo 20px */
         line-height: 1.1;
         white-space: nowrap; 
     }
     
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
         font-size: 0.95rem !important; 
-        padding: 5px 10px 30px 10px !important;
+        padding: 5px 10px 20px 10px !important; /* Bajamos el padding bottom a solo 20px */
+    }
+
+    /* Reducimos el margen extra arriba del mapa para que suba y tape el hueco */
+    .mapa-contenedor {
+        margin: 20px auto 0 auto !important; /* Bajado de 60px a 20px */
+        padding: 0 10px;
     }
 
     .nav-container { padding: 0 20px; }
@@ -861,7 +870,7 @@ select#profesion option {
     .desktop-only { display: none !important; }
     .mobile-only { display: block !important; }
 
-    .mobile-agenda { width: 100vw; margin-bottom: 20px; margin-top: 0; }
+    .mobile-agenda { width: 100vw; margin-bottom: 0px !important; margin-top: 0; }
     .mobile-agenda details {
         background-color: #f5b76b;
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
