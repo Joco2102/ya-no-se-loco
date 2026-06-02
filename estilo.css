@@ -572,8 +572,15 @@ nav a:hover {
     background-color: var(--color-fondo-claro);
     font-size: 1rem;
     font-family: var(--fuente-principal);
-    color: var(--texto-negro);
+    color: #555555; /* Gris oscuro suave, no negro full */
     width: 100%;
+}
+.input-group input::placeholder {
+    color: #555555;
+}
+.input-group select option {
+    color: #555555;
+    background-color: var(--color-fondo-claro);
 }
 
 .form-container .btn-orange {
