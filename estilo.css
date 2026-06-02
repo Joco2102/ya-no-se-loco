@@ -61,6 +61,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* ESTA ES LA LÍNEA MÁGICA QUE FALTA */
     text-align: center;
     padding: calc(var(--nav-height) + 20px) 20px 0px 20px;
     background-size: cover;
