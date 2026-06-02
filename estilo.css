@@ -31,18 +31,22 @@ body {
     font-family: var(--fuente-principal);
     background-color: var(--color-fondo-oscuro);
     color: var(--color-texto-blanco);
+    font-weight: 500; /* Montserrat Medium por defecto */
     line-height: 1.6;
 }
 
+/* TODOS LOS TÍTULOS BISON BOLD */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'bison', sans-serif;
+    font-weight: bold; 
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+/* SUBTÍTULOS MONTSERRAT MEDIUM */
 .subtitle {
     font-family: var(--fuente-principal);
-    font-weight: 600;
+    font-weight: 500; 
     text-transform: none;
     letter-spacing: normal;
 }
@@ -73,6 +77,7 @@ img {
     flex-direction: column;
     align-items: center;
 }
+
 .btn-orange {
     display: inline-block;
     background-color: var(--color-principal);
@@ -184,7 +189,6 @@ nav a:hover {
 .dungeon-heroes-title {
     color: #f1ebd9;
     font-size: 7rem;
-    font-weight: 900;
     letter-spacing: 8px;
     line-height: 0.9;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
@@ -194,7 +198,6 @@ nav a:hover {
 .main-festival-title {
     color: #ffffff;
     font-size: 4rem;
-    font-weight: 900;
     letter-spacing: 6px;
     line-height: 1;
     text-shadow:
@@ -213,10 +216,10 @@ nav a:hover {
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
     max-width: 700px;
     margin: 0 auto 5px auto;
-    font-weight: 600;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
 }
 
@@ -230,7 +233,7 @@ nav a:hover {
 }
 
 #portal h2 {
-    font-size: 5rem !important;
+    font-size: 3.5rem !important; /* Un poco más grande por ser la apertura */
     margin-bottom: 30px;
     line-height: 1;
 }
@@ -243,15 +246,18 @@ nav a:hover {
 
 #portal .text-block p {
     font-family: var(--fuente-principal);
-    font-size: 1.3rem;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
     margin-bottom: 30px;
-    font-weight: 600;
     line-height: 1.5;
     text-align: center;
 }
 
+/* =========================================================
+   REGLA DE 40px (TÍTULOS) Y 20px (SUBTÍTULOS) PARA DESKTOP
+   ========================================================= */
 #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-    font-size: 4rem;
+    font-size: 2.5rem; /* EXACTAMENTE 40px */
     background-color: #31221a;
     width: 100%;
     padding: 60px 20px 10px 20px;
@@ -260,6 +266,7 @@ nav a:hover {
 }
 
 #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
+    font-size: 1.25rem; /* EXACTAMENTE 20px */
     background-color: #31221a;
     width: 100%;
     padding: 10px 20px 60px 20px;
@@ -335,12 +342,12 @@ nav a:hover {
 }
 
 .col-header h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 5px;
 }
 
 .col-header p {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-family: var(--fuente-principal);
     font-weight: 700;
 }
@@ -373,7 +380,7 @@ nav a:hover {
     margin-bottom: 15px;
     font-size: 0.85rem;
     font-family: var(--fuente-principal);
-    font-weight: 700;
+    font-weight: 500;
     text-align: left;
 }
 
@@ -382,6 +389,7 @@ nav a:hover {
     flex-shrink: 0;
     border-right: none; 
     padding-right: 0;
+    font-weight: 700;
 }
 
 /* mapita */
@@ -412,7 +420,7 @@ nav a:hover {
     padding: 10px 15px;
     font-family: var(--fuente-principal);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* invitados (tarjetas) */
@@ -451,7 +459,7 @@ nav a:hover {
     padding: 0 25px 15px 25px;
     font-family: var(--fuente-principal);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #e0e0e0;
     margin-bottom: auto; 
     text-transform: uppercase;
@@ -551,7 +559,7 @@ nav a:hover {
 .input-group label {
     color: var(--color-texto-blanco);
     font-family: var(--fuente-principal);
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 8px;
     font-size: 1.1rem;
 }
@@ -731,7 +739,7 @@ nav a:hover {
 
 .modal-texto-dinamico {
     font-family: var(--fuente-principal);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.1rem;
     color: #555555;
     line-height: 1.5;
@@ -762,21 +770,10 @@ nav a:hover {
     .dungeon-heroes-title { font-size: 5.5rem; }
     .main-festival-title { font-size: 3.2rem; }
     .hero-location { font-size: 1.2rem; margin-bottom: 15px; }
-    .hero-text p { font-size: 1.1rem; }
     
-    #portal h2 { font-size: 3.8rem !important; }
-    #portal .text-block p { font-size: 1.1rem; margin-bottom: 15px; }
-    
-    #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 3.2rem;
-        padding-top: 40px;
-    }
-    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        padding-bottom: 40px;
-    }
+    /* Mantenemos los 40px y 20px intactos para resoluciones Desktop */
     
     .calendar-table .col { padding: 30px 3vw; }
-    .col-header h3 { font-size: 2rem; }
     
     .hero-card { height: 160px; }
     .hero-card img { width: 160px; height: 160px; }
@@ -787,8 +784,8 @@ nav a:hover {
 }
 
 /* ===================================================================
-   OPTIMIZACIÓN EXCLUSIVA PARA CELULARES (MOBILE 412x917)
-=================================================================== */
+   REGLA DE 36px (TÍTULOS) Y 18px (SUBTÍTULOS) PARA CELULARES
+   =================================================================== */
 @media (max-width: 768px) {
     
     .dungeon-heroes-title {
@@ -806,24 +803,25 @@ nav a:hover {
     #hero .hero-text p { font-size: 1rem; }
     
     #portal h2 { 
-        font-size: 2.4rem !important; /* Ajustado sutilmente */
+        font-size: 2.25rem !important; /* 36px */
         letter-spacing: 1px !important;
         margin-bottom: 20px; 
     }
-    #portal .text-block p { font-size: 1rem !important; margin-bottom: 20px; }
+    #portal .text-block p { font-size: 1.125rem !important; /* 18px */ margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* TITULOS CON TAMAÑO EN SU PUNTO JUSTO PARA RESPONDRE EN 412px */
+    /* EXACTAMENTE 36px PARA TITULOS DE SECCIÓN */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 2.1rem !important; /* Bajado un toque de 2.4rem para que entre cómodo en 2 líneas */
+        font-size: 2.25rem !important; 
         letter-spacing: 1px !important; 
         padding: 40px 10px 10px 10px !important; 
         line-height: 1.1;
     }
     
+    /* EXACTAMENTE 18px PARA SUBTÍTULOS */
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
+        font-size: 1.125rem !important; 
         padding: 10px 10px 40px 10px !important;
-        font-size: 1rem !important;
     }
 
     .nav-container { padding: 0 20px; }
