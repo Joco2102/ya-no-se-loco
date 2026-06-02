@@ -784,7 +784,7 @@ nav a:hover {
 }
 
 /* ===================================================================
-   REGLA DE 36px (TÍTULOS) Y 18px (SUBTÍTULOS) PARA CELULARES
+   OPTIMIZACIÓN PARA CELULARES (1 O 2 RENGLONES MÁXIMO)
    =================================================================== */
 @media (max-width: 768px) {
     
@@ -803,22 +803,21 @@ nav a:hover {
     #hero .hero-text p { font-size: 1rem; }
     
     #portal h2 { 
-        font-size: 2.25rem !important; /* 36px */
+        font-size: 1.75rem !important; /* Achicamos a 28px para que entre perfecto */
         letter-spacing: 1px !important;
         margin-bottom: 20px; 
     }
-    #portal .text-block p { font-size: 1.125rem !important; /* 18px */ margin-bottom: 20px; }
+    #portal .text-block p { font-size: 1.125rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* EXACTAMENTE 36px PARA TITULOS DE SECCIÓN */
+    /* TITULOS CALCULADOS PARA 1 o 2 RENGLONES MÁXIMO */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 2.25rem !important; 
-        letter-spacing: 1px !important; 
+        font-size: 1.75rem !important; /* 28px: El punto de equilibrio ideal */
+        letter-spacing: 1px !important; /* Texto un poquito más compacto */
         padding: 40px 10px 10px 10px !important; 
         line-height: 1.1;
     }
     
-    /* EXACTAMENTE 18px PARA SUBTÍTULOS */
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
         font-size: 1.125rem !important; 
         padding: 10px 10px 40px 10px !important;
