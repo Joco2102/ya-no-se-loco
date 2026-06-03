@@ -183,7 +183,9 @@ nav a:hover {
 
 .dungeon-heroes-title {
     color: #f1ebd9;
-    font-size: 7rem;
+    font-size: clamp(6rem, 9vw, 9rem);
+    line-height: 0.8;
+    margin-bottom: -10px;
     font-weight: 900;
     letter-spacing: 8px;
     line-height: 0.9;
@@ -193,7 +195,8 @@ nav a:hover {
 
 .main-festival-title {
     color: #ffffff;
-    font-size: 4rem;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    line-height: 0.9;
     font-weight: 900;
     letter-spacing: 6px;
     line-height: 1;
@@ -213,8 +216,8 @@ nav a:hover {
 }
 
 .hero-text p {
-    font-size: 1.2rem;
-    max-width: 700px;
+    font-size: 1.35rem;
+    max-width: 850px;
     margin: 0 auto 5px auto;
     font-weight: 600;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
@@ -230,7 +233,7 @@ nav a:hover {
 }
 
 #portal h2 {
-    font-size: 5rem !important;
+    font-size: 5.5rem !important;
     margin-bottom: 30px;
     line-height: 1;
 }
@@ -244,6 +247,7 @@ nav a:hover {
 #portal .text-block p {
     font-family: var(--fuente-principal);
     font-size: 1.3rem;
+    max-width: 850px;
     margin-bottom: 30px;
     font-weight: 600;
     line-height: 1.5;
@@ -316,7 +320,7 @@ nav a:hover {
 }
 
 .calendar-table .col {
-    padding: 40px 5vw; 
+    padding: 40px 3vw; 
     border-right: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -390,8 +394,8 @@ nav a:hover {
 }
 
 .mapa-contenedor {
-    width: 100%;
-    max-width: 1200px; 
+    width: 95%;
+    max-width: 1400px; 
     margin: 60px auto 0 auto;
     padding: 0 20px;
 }
@@ -405,10 +409,10 @@ nav a:hover {
 }
 
 .mapa-aviso {
-    background-color: transparent; 
+    background-color:#594336;
+    margin-top:0;
     color: var(--color-texto-blanco);
     width: 100%;
-    margin-top: 15px;
     padding: 10px 15px;
     font-family: var(--fuente-principal);
     font-size: 1rem;
@@ -421,7 +425,7 @@ nav a:hover {
     background-color: #6d4b38; 
     text-align: left;
     border: none;
-    height: 200px;
+    height: 220px;
 }
 
 .hero-card img {
@@ -442,7 +446,7 @@ nav a:hover {
 
 .info-invitado h3 {
     padding: 20px 25px 5px 25px;
-    font-size: 2.2rem;
+    font-size:1rem;
     margin-bottom: 0;
     line-height: 1.1;
 }
@@ -450,7 +454,7 @@ nav a:hover {
 .info-invitado p {
     padding: 0 25px 15px 25px;
     font-family: var(--fuente-principal);
-    font-size: 0.85rem;
+    font-size:0.65rem;
     font-weight: 600;
     color: #e0e0e0;
     margin-bottom: auto; 
@@ -494,7 +498,7 @@ nav a:hover {
 
 .card-actividad {
     flex-shrink: 0;
-    width: 340px; 
+    width: 380px; 
 }
 
 .arrow {
@@ -513,7 +517,7 @@ nav a:hover {
 }
 
 .card-actividad {
-    background-color: var(--color-principal);
+    background-color:#f5b76b;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -536,7 +540,7 @@ nav a:hover {
 /* registro */
 .form-container {
     width: 100%;
-    max-width: 600px; 
+    max-width: 700px; 
     text-align: left;
     margin: 60px auto;
     padding: 0 20px;
@@ -576,7 +580,7 @@ nav a:hover {
     width: auto;
     padding: 15px 60px;
     display: block;
-    margin: 40px auto 0 auto;
+    margin-top:50px;
     border-radius: 8px;
     font-family: var(--fuente-principal);
 }
@@ -782,7 +786,7 @@ nav a:hover {
     .calendar-table .col { padding: 30px 3vw; }
     .col-header h3 { font-size: 2rem; }
     
-    .hero-card { height: 160px; }
+    .hero-card { height:auto; }
     .hero-card img { width: 160px; height: 160px; }
     .info-invitado { width: calc(100% - 160px); }
     .info-invitado h3 { font-size: 1.6rem; padding: 15px 15px 5px 15px; }
@@ -799,18 +803,12 @@ nav a:hover {
 =========================== */
 
 .full-page {
-    min-height: 100vh;
+    min-height: auto;
     padding-top: calc(var(--nav-height) + 20px);
     padding-bottom: 20px;
 }
 
 #portal .content {
-    min-height: auto;
-}
-
-#eventos,
-#invitados,
-#zonas-actividades {
     min-height: auto;
 }
 
@@ -829,12 +827,12 @@ nav a:hover {
 }
     
     .dungeon-heroes-title {
-        font-size: 3.8rem !important;
+        font-size: 3rem !important;
+        line-height: 0.8;
         letter-spacing: 4px;
-        line-height: 1;
     }
     .main-festival-title { 
-        font-size: 2.1rem !important; 
+        font-size: 1.8rem !important; 
         letter-spacing: 3px;
         margin-top: 5px;
     }
@@ -843,7 +841,7 @@ nav a:hover {
     #hero .hero-text p { font-size: 1rem; }
     
     #portal h2 { 
-        font-size: 1.5rem !important; /* TITULO CHICO */
+        font-size: 2rem !important;
         letter-spacing: 1px !important;
         margin-bottom: 20px; 
     }
@@ -917,7 +915,7 @@ nav a:hover {
         width: 100%; 
         margin: 0; 
     }
-    .hero-card { height: 150px; } 
+    .hero-card { height: auto; } 
     .hero-card img { width: 150px; height: 150px; }
     .info-invitado { width: calc(100% - 150px); }
     .info-invitado h3 { font-size: 1.3rem; padding: 15px 15px 2px 15px; }
@@ -925,11 +923,11 @@ nav a:hover {
 
     .carousel { padding: 40px 5px; gap: 5px; }
     .carousel-viewport { max-width: 320px; }
-    .card-actividad { width: 320px; padding: 15px; }
+    .card-actividad { width: 280px; padding: 15px; }
     .card-actividad img { height: 230px; }
     .arrow { font-size: 2.5rem; padding: 0 2px; }
 
-    .form-container { padding: 0 10px; margin: 30px auto; }
+    .form-container { padding-left:20px;padding-right:20px; margin: 30px auto; }
 
     .footer-columns { flex-direction: column; gap: 40px; }
     .vertical-line { display: none; }
@@ -940,44 +938,4 @@ nav a:hover {
     .modal-titulo-dinamico { font-size: 1.5rem; }
     .modal-texto-dinamico { font-size: 1rem; }
     
-}
-/* ===========================
-   SECCIONES A PANTALLA COMPLETA
-=========================== */
-
-#portal,
-#eventos,
-#invitados,
-#zonas-actividades {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-
-/* Portal */
-#portal .content {
-    transform: none;
-    min-height: calc(100vh - var(--nav-height));
-    justify-content: center;
-}
-
-/* Cronograma */
-#eventos .content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Invitados */
-#invitados .content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Carrusel */
-#zonas-actividades .content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
