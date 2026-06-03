@@ -25,7 +25,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--nav-height); 
+    scroll-padding-top: var(--nav-height); /* Corrige que el menú tape títulos al navegar */
 }
 
 body {
@@ -33,7 +33,6 @@ body {
     background-color: var(--color-fondo-oscuro);
     color: var(--color-texto-blanco);
     line-height: 1.6;
-    overflow-x: hidden; /* Elimina cualquier posibilidad de barra scroll horizontal */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,15 +53,14 @@ img {
     max-width: 100%;
 }
 
-/* Recuperamos el alto completo (100vh) para el sistema slide de Desktop */
 .full-page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Permite alinear el contenido desde arriba de forma natural */
+    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: var(--nav-height) 0 0 0; /* Quitamos paddings laterales de los extremos */
+    padding: calc(var(--nav-height) + 20px) 20px 40px 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,9 +73,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px; /* El padding lateral vive aquí adentro para proteger el contenido */
 }
-
 .btn-orange {
     display: inline-block;
     background-color: var(--color-principal);
@@ -167,10 +163,16 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* hero desktop */
+/* hero */
 .hero-bg {
     background-image: url('imagenes/imagen\ de\ fondo\ pagina\ 1.jpeg');
-    justify-content: center; /* Centrado perfecto vertical para el landing */
+}
+
+.hero-date {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
 .hero-title {
@@ -185,8 +187,8 @@ nav a:hover {
     font-size: 7rem;
     font-weight: 900;
     letter-spacing: 8px;
-    line-height: 0.75; 
-    margin-bottom: -10px; 
+    line-height: 0.75; /* Acerca FESTIVAL a DUNGEON HEROES */
+    margin-bottom: -10px; /* Reducción de separación del bloque */
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
     display: block;
 }
@@ -203,89 +205,128 @@ nav a:hover {
     display: block;
 }
 
+.hero-location {
+    font-family: var(--fuente-principal);
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: normal;
+}
+
 .hero-text p {
     font-size: 1.3rem; 
-    max-width: 900px; 
+    max-width: 900px; /* Ensanchado para ocupar más espacio en desktop */
     margin: 0 auto 5px auto;
     font-weight: 600;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
 }
 
-/* portal desktop (Texto más robusto para llenar la altura 100vh sin vacíos) */
+/* portal */
 .brick-bg {
     background-image: url('imagenes/imagen\ de\ fondo\ pagina2-3-4.jpeg');
 }
 
-#portal {
-    justify-content: center; /* Centra el bloque de texto completo en la pantalla slide */
+#portal .content {
+    transform: none;
 }
 
 #portal h2 {
     font-size: 5rem !important;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     line-height: 1;
+}
+
+#portal .text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #portal .text-block p {
     font-family: var(--fuente-principal);
-    font-size: 1.7rem; /* Escalado para llenar de forma imponente el espacio desktop */
-    max-width: 1000px; 
-    margin-bottom: 35px;
+    font-size: 1.5rem; 
+    max-width: 1000px; /* Ensanchado del bloque para ocupar más ancho de pantalla */
+    margin-bottom: 30px;
     font-weight: 600;
-    line-height: 1.6;
+    line-height: 1.5;
     text-align: center;
-}
-
-/* ===================================================================
-   MÁGICA ESTRUCTURAL: BREAKOUT 100VW PARA FRANJAS MARRONES OSCURAS
-=================================================================== */
-#eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2,
-#eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    background-color: var(--color-fondo-marron-oscuro); /* #31221a */
-    box-sizing: border-box;
 }
 
 #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
     font-size: 4rem;
-    padding: 50px 20px 10px 20px;
+    background-color: #31221a;
+    width: 100%;
+    padding: 60px 20px 10px 20px;
+    margin-bottom: 0;
+    line-height: 1;
 }
 
 #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-    padding: 10px 20px 50px 20px;
-    margin-bottom: 40px; /* Separa la franja del contenido de abajo */
+    background-color: #31221a;
+    width: 100vw;
+    padding: 10px 20px 60px 20px;
+    margin-bottom: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
 
 /* fondos unificados (marrón más claro) */
-#eventos, #mapa, #registro, #invitados, #zonas-actividades {
-    background-color: #594336 !important; 
+#eventos, #mapa, #registro {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    background-color: #594336; 
+    justify-content: flex-start; /* Evita centrado vertical flotante en desktop */
+}
+
+#invitados {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     background-image: none !important;
+    background-color: #594336 !important;
+    width: 100%;
+    justify-content: flex-start; /* Evita centrado vertical flotante en desktop */
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%; 
+    max-width: 100%;
+    margin: 0;
+    gap: 2px; 
+    background-color: transparent; 
+}
+
+#zonas-actividades {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+#eventos .content, #mapa .content, #invitados .content, #zonas-actividades .content, #registro .content {
+    width: 100%;
+    max-width: 100%; 
 }
 
 /* eventos y calendario */
-#eventos .content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 .calendar-table.desktop-only {
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    max-width: 100%;
     text-align: left;
     color: var(--color-texto-negro);
-    flex-grow: 1; /* Obliga a las columnas a estirarse hasta el fondo de la pantalla */
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    flex-grow: 1; /* Estira el cronograma hasta la parte inferior de la sección */
+    padding-bottom: 0px;
 }
 
 .calendar-table .col {
-    padding: 40px 4vw; 
+    padding: 40px 5vw; 
     border-right: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -314,7 +355,7 @@ nav a:hover {
     font-weight: 700;
 }
 
-/* línea del calendario */
+/* línea recta mágica para el calendario */
 .col ul, .panel-desplegable ul {
     list-style: none;
     padding: 0;
@@ -353,22 +394,38 @@ nav a:hover {
     padding-right: 0;
 }
 
-/* mapita desktop */
+/* mapita */
+#mapa {
+    padding-bottom: 60px;
+}
+
 .mapa-contenedor {
     width: 100%;
-    max-width: 1300px; 
-    margin: 20px auto 40px auto;
+    max-width: 1400px; /* Agrandado del mapa en desktop */
+    margin: 60px auto 0 auto;
+    padding: 0 20px;
 }
 
-/* invitados desktop */
-.contenedor-tarjetas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.mapa-contenedor img {
     width: 100%;
-    gap: 20px; /* Le da una separación elegante a los bloques en desktop */
-    padding-bottom: 40px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
 }
 
+.mapa-aviso {
+    background-color: transparent; 
+    color: var(--color-texto-blanco);
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* invitados (tarjetas) */
 .hero-card {
     display: flex;
     background-color: #6d4b38; 
@@ -422,34 +479,33 @@ nav a:hover {
     display: block;
 }
 
-/* carrusel desktop: Medidas milimétricas para esconder la 4ta tarjeta */
+/* carrusel */
 .carousel {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
     width: 100%;
-    padding: 20px 0 60px 0;
+    padding: 60px 5vw;
 }
 
-/* 3 cartas de 360px + 2 gaps de 30px = 1140px exactos */
 .carousel-viewport {
     overflow: hidden;
-    width: 1140px !important; 
-    max-width: 100%;
+    width: 100%;
+    max-width: 1200px; 
 }
 
 .carousel-track {
     display: flex;
-    gap: 30px;
+    gap: 0px;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
 }
 
 .card-actividad {
     flex-shrink: 0;
-    width: 360px !important; 
-    background-color: #f99b29 !important; /* Color Domingo unificado */
+    width: 380px; /* Agrandadas las tarjetas en desktop */
+    background-color: #f99b29;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -466,6 +522,10 @@ nav a:hover {
     padding: 0 10px;
 }
 
+.arrow:hover {
+    transform: scale(1.2);
+}
+
 .card-actividad img {
     width: 100%;
     height: 220px;
@@ -480,12 +540,13 @@ nav a:hover {
     line-height: 1;
 }
 
-/* registro desktop */
+/* registro */
 .form-container {
     width: 100%;
-    max-width: 700px; 
+    max-width: 750px; /* Agrandado del formulario */
     text-align: left;
-    margin: 20px auto 60px auto;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
 .input-group {
@@ -514,12 +575,17 @@ nav a:hover {
     width: 100%;
 }
 
+.input-group select option {
+    color: #555555;
+}
+
 .form-container .btn-orange {
     width: auto;
     padding: 15px 60px;
     display: block;
-    margin: 40px auto 0 auto; 
+    margin: 60px auto 0 auto; /* Más separación del botón */
     border-radius: 8px;
+    font-family: var(--fuente-principal);
 }
 
 /* footer */
@@ -549,6 +615,39 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center; 
+    width: 100%;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+}
+
+.footer-ayuda h3, 
+.footer-social h3 {
+    font-family: var(--fuente-principal);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: normal;
+    text-transform: uppercase;
+}
+
+.footer-ayuda {
+    align-items: flex-start;
+}
+
+.footer-ayuda a {
+    font-family: var(--fuente-principal);
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.footer-ayuda a:hover {
+    color: var(--color-principal);
 }
 
 .vertical-line {
@@ -557,6 +656,10 @@ nav a:hover {
     background-color: #ffffff;
     opacity: 0.3;
     margin: 0 50px; 
+}
+
+.footer-social {
+    align-items: center; 
 }
 
 .social-links {
@@ -571,26 +674,50 @@ nav a:hover {
     border-radius: 50%;
     object-fit: contain;
     padding: 10px;
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
 }
 
 .footer-sponsors {
-    display: flex;
+    align-items: flex-start;
     gap: 20px; 
     padding-left: 40px;
 }
 
-.logo-ign { height: 35px; width: auto; }
-.logo-steam { height: 45px; width: auto; }
-.logo-itch { height: 45px; width: auto; }
+.logo-ign {
+    height: 35px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-steam {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    margin-left: -2px;
+}
+
+.logo-itch {
+    height: 45px; 
+    width: auto;
+    object-fit: contain;
+}
 
 /* modales */
 .modal-overlay {
     display: none; 
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.7); 
     z-index: 9999;
-    justify-content: center; align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-beige {
@@ -601,136 +728,295 @@ nav a:hover {
     text-align: center;
     max-width: 600px;
     width: 90%;
+    border-radius: 0; 
+}
+
+.modal-titulo-dinamico {
+    font-family: var(--fuente-principal); 
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    text-transform: none; 
+}
+
+.modal-texto-dinamico {
+    font-family: var(--fuente-principal);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+    line-height: 1;
+}
+
+.mapa-zoom {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* ==========================================
+   SECCIONES A PANTALLA COMPLETA (DESKTOP)
+   (Movido antes de las Queries de Mobile)
+========================================== */
+#portal,
+#eventos,
+#invitados,
+#zonas-actividades {
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#portal .content {
+    transform: none;
+    min-height: calc(100vh - var(--nav-height));
+    justify-content: space-evenly;
+}
+
+#eventos .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#invitados .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#zonas-actividades .content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ===================================================================
-   OPTIMIZACIÓN EXCLUSIVA PARA CELULARES (MOBILE) - CONTROL ABSOLUTO
+   OPTIMIZACIÓN EXCLUSIVA PARA DESKTOP 1366x768 
+=================================================================== */
+@media (max-width: 1366px) and (min-width: 769px) {
+    .dungeon-heroes-title { font-size: 5.5rem; }
+    .main-festival-title { font-size: 3.2rem; }
+    .hero-location { font-size: 1.2rem; margin-bottom: 15px; }
+    .hero-text p { font-size: 1.1rem; }
+    
+    #portal h2 { font-size: 3.8rem !important; }
+    #portal .text-block p { font-size: 1.1rem; margin-bottom: 15px; }
+    
+    #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
+        font-size: 3.2rem;
+        padding-top: 40px;
+    }
+    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
+        padding-bottom: 40px;
+    }
+    
+    .calendar-table .col { padding: 30px 3vw; }
+    .col-header h3 { font-size: 2rem; }
+    
+    .hero-card { height: 160px; }
+    .hero-card img { width: 160px; height: 160px; }
+    .info-invitado { width: calc(100% - 160px); }
+    .info-invitado h3 { font-size: 1.6rem; padding: 15px 15px 5px 15px; }
+    .info-invitado p { padding: 0 15px 10px 15px; font-size: 0.75rem; }
+    .info-invitado .tag { padding: 8px 15px; }
+}
+
+/* ===================================================================
+   OPTIMIZACIÓN EXCLUSIVA PARA CELULARES (MOBILE 412x917)
 =================================================================== */
 @media (max-width: 768px) {
     
-    /* Forzamos alto total 100vh exclusivamente a Hero y Portal en celulares */
-    #hero, #portal {
-        min-height: 100vh !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-    }
-
-    /* El resto de secciones se ajustan perfectamente a su contenido en móvil */
-    #eventos, #mapa, #invitados, #zonas-actividades, #registro {
-        min-height: auto !important;
-        display: block !important;
-        padding-bottom: 40px !important;
-    }
-
+    /* MOBILE SIN ESPACIOS VACÍOS */
     .full-page {
-        padding-top: calc(var(--nav-height) + 10px);
+        min-height: auto !important; 
+        padding-top: calc(var(--nav-height) + 20px);
+        padding-bottom: 30px !important;
     }
 
-    /* Acercamos drásticamente FESTIVAL a DUNGEON HEROES */
+    #portal .content,
+    #eventos .content,
+    #invitados .content,
+    #zonas-actividades .content,
+    #registro .content {
+        min-height: auto !important;
+        max-width: 100% !important; 
+    }
+
+    #portal,
+    #eventos,
+    #invitados,
+    #zonas-actividades {
+         min-height: 100vh !important;
+         display: flex;
+    }
+    #hero {
+    min-height: 100vh;
+   }
+    .mobile-agenda {
+        margin-bottom: 0;
+        width: 100vw; 
+        margin-top: 0;
+    }
+
+    .carousel {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .form-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* Pantalla 1: Ajuste de títulos compactos en un renglón */
     .dungeon-heroes-title {
-        font-size: 3.5rem !important; 
+        font-size: 2.8rem !important; 
         letter-spacing: 4px;
-        line-height: 0.6 !important; 
-        margin-bottom: -5px !important;
+        line-height: 0.8;
+        margin-bottom: 0px;
     }
     .main-festival-title { 
-        font-size: 1.8rem !important; 
+        font-size: 1.4rem !important; 
         letter-spacing: 2px;
-        margin-top: 0px !important;
+        margin-top: 5px;
     }
     
     #hero .hero-location { font-size: 1.1rem; margin-bottom: 20px; }
     #hero .hero-text p { font-size: 1rem; }
     
-    /* Portal Mobile */
+    /* Pantalla 2: Título más grande */
     #portal h2 { 
         font-size: 2.2rem !important; 
+        letter-spacing: 1px !important;
         margin-bottom: 20px; 
     }
-    #portal .text-block p { font-size: 1.1rem !important; margin-bottom: 15px; }
+    #portal .text-block p { font-size: 1rem !important; margin-bottom: 20px; }
     #portal .text-block p br { display: none; }
 
-    /* Forzar a las franjas marones oscuras a romper el ancho en móvil también */
-    #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2,
-    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        width: 100vw !important;
-        left: 50% !important;
-        right: 50% !important;
-        margin-left: -50vw !important;
-        margin-right: -50vw !important;
-    }
-
+    /* Títulos de secciones adaptados a móvil */
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 1.5rem !important; 
+        font-size: 1.3rem !important; 
         letter-spacing: 1px !important; 
-        padding: 30px 20px 10px 20px !important;
+        padding: 30px 10px 10px 10px !important; 
+        line-height: 1.2;
     }
     
     #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        padding: 10px 20px 30px 20px !important;
+        padding: 10px 15px 40px 15px !important;
         font-size: 1rem !important;
-        margin-bottom: 25px !important;
     }
 
     .nav-container { padding: 0 20px; }
+    
     .hamburger-menu { display: flex; }
     
     nav ul {
-        display: none; flex-direction: column; position: absolute;
-        top: var(--nav-height); left: 0; width: 100%;
-        background-color: #000000; padding: 20px 0; border-top: 1px solid #222; gap: 25px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 20px 0;
+        border-top: 1px solid #222;
+        gap: 25px;
     }
+    
     nav ul.active { display: flex; }
+    nav a { font-size: 1.1rem; }
 
     .desktop-only { display: none !important; }
     .mobile-only { display: block !important; }
 
-    /* Agenda Mobile sin saltos ni espacios */
-    .mobile-agenda {
-        width: 100% !important;
-        margin: 0 !important;
+    .mobile-agenda details {
+        background-color: #f5b76b;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
     }
-    .mobile-agenda details { background-color: #f5b76b; border-bottom: 2px solid rgba(0, 0, 0, 0.1); width: 100%; }
     .mobile-agenda details:nth-child(2) { background-color: #f7a94a; }
     .mobile-agenda details:nth-child(3) { background-color: #f99b29; }
-    .mobile-agenda summary { padding: 20px; list-style: none; }
-    .summary-content { display: flex; justify-content: space-between; align-items: center; color: var(--color-texto-negro); }
-    .text-dia strong { font-size: 1.4rem; font-weight: 800; }
-    
-    .panel-desplegable { padding: 10px 20px 20px 20px; color: var(--color-texto-negro); }
-
-    /* Invitados Mobile sin cortes */
-    .contenedor-tarjetas { grid-template-columns: 1fr; width: 100%; gap: 10px; padding: 0 10px; }
-    .hero-card { height: auto; min-height: 130px; } 
-    .hero-card img { width: 130px; height: 100%; min-height: 130px; }
-    .info-invitado { width: calc(100% - 130px); }
-    .info-invitado h3 { font-size: 1.2rem; padding: 10px 15px 2px 15px; }
-    .info-invitado p { padding: 0 15px 10px 15px; font-size: 0.7rem; }
-    .info-invitado .tag { font-size: 0.6rem; padding: 6px 15px; }
-
-    /* Carrusel Mobile perfecto: Muestra solo 1 tarjeta entera sin asomos */
-    .carousel { padding: 20px 0; gap: 10px; }
-    .carousel-viewport { width: 290px !important; } /* Tamaño matemático estricto */
-    .card-actividad { width: 290px !important; padding: 15px; background-color: #f99b29 !important; }
-    .card-actividad img { height: 200px; }
-    .arrow { font-size: 2.5rem; padding: 0 5px; }
-
-    /* Registro Mobile */
-    .form-container { padding: 0 20px; margin: 20px auto; width: 100%; }
-    .btn-orange { font-size: 0.9rem; padding: 12px 20px; width: 100%; max-width: 290px; }
-
-    /* Recuadro unificado del aviso del mapa */
-    .mapa-aviso {
-        background-color: var(--color-fondo-marron-oscuro); 
-        border-radius: 8px; 
-        margin: 20px auto 0 auto; 
-        padding: 15px;
-        width: calc(100% - 40px);
+    .mobile-agenda summary {
+        padding: 25px 30px; list-style: none; cursor: pointer; outline: none;
     }
+    .mobile-agenda summary::-webkit-details-marker { display: none; }
+    .summary-content {
+        display: flex; justify-content: space-between; align-items: center; color: var(--color-texto-negro);
+    }
+    .text-dia { text-align: left; display: flex; flex-direction: column; }
+    .text-dia strong { font-size: 1.6rem; font-weight: 800; font-family: var(--fuente-principal); }
+    .text-dia span { font-size: 0.85rem; font-weight: 600; font-family: var(--fuente-principal); }
+    
+    .panel-desplegable { padding: 10px 30px 30px 30px; text-align: left; color: var(--color-texto-negro); }
+    
+    .icon-arrow::after {
+        content: '∨'; font-weight: bold; font-size: 1.4rem; transition: transform 0.3s ease; display: inline-block;
+    }
+    details[open] .icon-arrow::after { transform: rotate(180deg); }
 
-    .footer-columns { flex-direction: column; gap: 30px; }
+    .contenedor-tarjetas { 
+        grid-template-columns: 1fr; 
+        width: 100%; 
+        margin: 0; 
+    }
+    
+    /* Pantalla 5: Altura automática para evitar cortes en textos largos */
+    .hero-card { 
+        height: auto; 
+        min-height: 150px;
+    } 
+    .hero-card img { width: 150px; height: 150px; }
+    .info-invitado { width: calc(100% - 150px); }
+    .info-invitado h3 { font-size: 1.1rem; padding: 15px 15px 2px 15px; }
+    .info-invitado p { padding: 0 15px 10px 15px; font-size: 0.75rem; }
+    .info-invitado .tag { font-size: 0.55rem; padding: 8px 10px; }
+
+    /* Pantalla 6: Carrusel adaptable por porcentajes */
+    .carousel { padding: 40px 5px; gap: 5px; }
+    .carousel-viewport { width: 100%; max-width: 280px; }
+    .card-actividad { width: 80vw; max-width: 280px; padding: 15px; }
+    .card-actividad img { height: 230px; }
+    .arrow { font-size: 2.5rem; padding: 0 2px; }
+
+    /* Pantalla 7: Registro con espaciado correcto a los bordes */
+    .form-container { padding: 0 20px; margin: 30px auto; width: 100%; box-sizing: border-box; }
+
+    .footer-columns { flex-direction: column; gap: 40px; }
     .vertical-line { display: none; }
     .footer-col { align-items: center !important; text-align: center; }
-    .footer-sponsors { padding-left: 0; justify-content: center; }
+    .footer-sponsors { padding-left: 0; }
+    
+    .modal-beige { padding: 40px 20px; }
+    .modal-titulo-dinamico { font-size: 1.5rem; }
+    .modal-texto-dinamico { font-size: 1rem; }
+    
+    /* Botón en un solo renglón */
+    .btn-orange {
+        font-size: 0.8rem; 
+        padding: 12px 15px; 
+        white-space: nowrap; 
+        width: 100%;
+        max-width: 280px; 
+    }
+
+    /* Recuadro del aviso del mapa con fondo oscuro unificado */
+    .mapa-aviso {
+        background-color: #4a3325; 
+        border-radius: 8px; 
+        margin: 20px 20px 0 20px;
+        padding: 15px;
+    }
 }
