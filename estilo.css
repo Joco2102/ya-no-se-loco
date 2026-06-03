@@ -492,7 +492,7 @@ nav a:hover {
 .carousel-viewport {
     overflow: hidden;
     width: 100%;
-    max-width: 1200px; 
+    max-width: 1180px;
 }
 
 .carousel-track {
@@ -841,9 +841,10 @@ nav a:hover {
     
     /* MOBILE SIN ESPACIOS VACÍOS */
     .full-page {
-         min-height: 100vh !important;
-         padding-top: calc(var(--nav-height) + 20px);
-         padding-bottom: 30px !important;
+    min-height: auto !important;
+    padding-top: calc(var(--nav-height) + 20px);
+    padding-bottom: 30px !important;
+}
     }
     #hero {
     min-height: 100vh !important;
@@ -862,15 +863,14 @@ nav a:hover {
         max-width: 100% !important; 
     }
 
-    #portal,
-    #eventos,
-    #invitados,
-    #zonas-actividades {
-         min-height: 100vh !important;
-         display: flex;
-    }
-    #hero {
-    min-height: 100vh;
+   #portal {
+    min-height: 100vh !important;
+}
+   #eventos,
+   #invitados,
+   #zonas-actividades {
+    min-height: auto !important;
+}
    }
     .mobile-agenda {
         width: 100vw;
