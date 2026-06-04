@@ -78,9 +78,9 @@ header {
 
 .nav-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 100%; /* Aprovecha todo el ancho de la pantalla */
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 2%; /* Pequeño margen de seguridad en los bordes */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -124,7 +124,6 @@ nav a:hover { color: var(--color-principal); }
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* ELIMINADO EL PADDING TOP: Esto arregla que el fondo empiece antes que el título */
 }
 
 /* Solo el Hero necesita padding top para que no lo tape la barra de navegación al cargar la web */
@@ -171,13 +170,13 @@ nav a:hover { color: var(--color-principal); }
     padding: 20px;
 }
 .hero-title {
-    display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; /* Separación corregida */
+    display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; 
 }
 .dungeon-heroes-title {
     color: var(--color-fondo-claro); font-size: 8rem; font-weight: 900; letter-spacing: 8px; line-height: 0.8; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); display: block;
 }
 .main-festival-title {
-    color: #ffffff; font-size: 4rem; font-weight: 900; letter-spacing: 6px; line-height: 1; text-shadow: 2px 2px 0px var(--color-principal), 6px 6px 15px rgba(0,0,0,0.9); display: block; margin-top: 20px; /* Separación aumentada */
+    color: #ffffff; font-size: 4rem; font-weight: 900; letter-spacing: 6px; line-height: 1; text-shadow: 2px 2px 0px var(--color-principal), 6px 6px 15px rgba(0,0,0,0.9); display: block; margin-top: 20px;
 }
 .hero-text p {
     font-size: 1.3rem; max-width: 800px; margin: 0 auto 10px auto; font-weight: 600; text-align: center; text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
@@ -196,10 +195,10 @@ nav a:hover { color: var(--color-principal); }
     justify-content: center; align-items: center; padding: 20px;
 }
 #portal h2 {
-    font-size: 5rem; margin-bottom: 60px; /* Margen aumentado */ text-align: center;
+    font-size: 5rem; margin-bottom: 60px; text-align: center;
 }
 #portal .text-block p {
-    font-family: var(--fuente-principal); font-size: 1.5rem; max-width: 900px; margin-bottom: 40px; /* Separación aumentada */ font-weight: 600; line-height: 1.6; text-align: center;
+    font-family: var(--fuente-principal); font-size: 1.5rem; max-width: 900px; margin-bottom: 40px; font-weight: 600; line-height: 1.6; text-align: center;
 }
 
 /* ==========================================================================
@@ -233,11 +232,11 @@ nav a:hover { color: var(--color-principal); }
     text-align: center;
     padding: 10px 20px 40px 20px;
     font-size: 1.2rem;
-    margin-bottom: 50px; /* Margen inferior para separar la franja del contenido que sigue */
+    margin-bottom: 50px; 
 }
 
 /* Contenedores centrados (Agenda, Mapa, Carrusel, etc) */
-.calendar-table, .mobile-agenda, .mapa-contenedor, .contenedor-tarjetas, .carousel, .form-container {
+.calendar-table, .mobile-agenda, .mapa-contenedor, .carousel, .form-container {
     width: 100%;
     max-width: var(--site-width);
     margin: 0 auto 60px auto; 
@@ -248,7 +247,7 @@ nav a:hover { color: var(--color-principal); }
    7. SECCIÓN 3: EVENTOS (AGENDA)
 ========================================================================== */
 .calendar-table.desktop-only { display: grid; grid-template-columns: repeat(3, 1fr); color: var(--color-texto-negro); padding: 0; max-width: 1550px; width: 96%; margin: 0 auto 0 auto; flex-grow: 1; }
-#eventos .subtitle { margin-bottom: 0; padding-bottom: 50px; } /* Ajuste para que el calendario toque el borde inferior sin espacios muertos */
+#eventos .subtitle { margin-bottom: 0; padding-bottom: 50px; } 
 .day-1 { background-color: #fbc27b; } .day-2 { background-color: #f9a646; } .day-3 { background-color: #f78c21; }
 .calendar-table .col { padding: 40px 30px; border-right: 1px solid rgba(0,0,0,0.1); }
 .calendar-table .col:last-child { border-right: none; }
@@ -269,7 +268,7 @@ nav a:hover { color: var(--color-principal); }
 /* ==========================================================================
    9. SECCIÓN 5: INVITADOS
 ========================================================================== */
-.contenedor-tarjetas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.contenedor-tarjetas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1550px; width: 96%; margin: 0 auto 60px auto; }
 .hero-card { display: flex; background-color: #684935; height: 200px; overflow: hidden; }
 .hero-card img { width: 200px; height: 100%; object-fit: cover; filter: grayscale(100%); flex-shrink: 0; }
 .info-invitado { padding: 0; display: flex; flex-direction: column; justify-content: space-between; width: 100%; text-align: left; }
@@ -281,7 +280,7 @@ nav a:hover { color: var(--color-principal); }
    10. SECCIÓN 6: CARRUSEL
 ========================================================================== */
 .carousel { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 30px; }
-.carousel-viewport { overflow: hidden; width: 1020px; } /* Ancho exacto matemático para 3 tarjetas completas */
+.carousel-viewport { overflow: hidden; width: 1020px; } 
 .carousel-track { display: flex; gap: 30px; transition: transform 0.5s ease-in-out; }
 .card-actividad { flex-shrink: 0; width: 320px; background-color: #f78c21; padding: 20px; border-radius: 15px; text-align: center; }
 .card-actividad img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; }
@@ -334,7 +333,7 @@ nav a:hover { color: var(--color-principal); }
 
 /* Estilo exacto a tu imagen "nuevo mensaje de agradecimiento.png" */
 .modal-beige {
-    background-color: #f2ebd9; /* Beige claro de la foto */
+    background-color: #f2ebd9; 
     color: #000000;
     padding: 60px 40px; 
     position: relative;
@@ -348,10 +347,10 @@ nav a:hover { color: var(--color-principal); }
 .modal-titulo-dinamico {
     font-family: var(--fuente-principal); 
     font-weight: 800; 
-    font-size: 1.8rem; /* Tamaño proporcional */
+    font-size: 1.8rem; 
     margin-bottom: 25px; 
     line-height: 1.3;
-    text-transform: none; /* Quitamos mayúsculas automáticas */
+    text-transform: none; 
     color: #111111;
 }
 
@@ -359,7 +358,7 @@ nav a:hover { color: var(--color-principal); }
     font-family: var(--fuente-principal); 
     font-weight: 600; 
     font-size: 1.05rem; 
-    color: #555555; /* Gris oscuro para el texto inferior */
+    color: #555555; 
     line-height: 1.5;
 }
 
@@ -395,11 +394,20 @@ nav a:hover { color: var(--color-principal); }
 
     .full-page { min-height: 100vh; }
 
+    /* QUITAR ESPACIOS VACÍOS GIGANTES EN SECCIONES */
+    #eventos.full-page, #mapa.full-page { min-height: auto; }
+
     /* Hero Mobile */
-    .hero-title { align-items: center; text-align: center; }
+    .hero-title { align-items: center; text-align: center; width: 100%; }
     .dungeon-heroes-title { font-size: 4rem; line-height: 0.9; margin-bottom: 0px; text-align: center; }
-    .main-festival-title { font-size: 2rem; margin-top: 15px; text-align: center; }
-    #hero .hero-text p { font-size: 1.1rem; padding: 0 10px; margin-bottom: 20px; }
+    .main-festival-title { 
+        font-size: 1.5rem; 
+        letter-spacing: 2px; 
+        margin-top: 15px; 
+        text-align: center; 
+        white-space: nowrap; /* Obliga al texto a estar en una sola línea */
+    }
+    #hero .hero-text p { font-size: 1.1rem; padding: 0 10px; margin-bottom: 20px; } 
     #hero .btn-orange { width: 100%; max-width: 320px; padding: 15px 10px; font-size: 0.9rem;}
 
     /* Portal Mobile */
@@ -411,21 +419,23 @@ nav a:hover { color: var(--color-principal); }
     #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
         font-size: 1.5rem; padding: 40px 20px 10px 20px; line-height: 1.3;
     }
-    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
+    /* Pegamos el subtítulo del evento al acordeón */
+    #eventos .subtitle { font-size: 1rem; padding: 10px 20px 20px 20px; margin-bottom: 0; } 
+    #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
         font-size: 1rem; padding: 10px 20px 30px 20px; margin-bottom: 40px;
     }
 
-    .calendar-table, .mobile-agenda, .mapa-contenedor, .contenedor-tarjetas, .carousel, .form-container {
+    .calendar-table, .mobile-agenda, .mapa-contenedor, .carousel, .form-container {
         padding: 0 20px;
     }
 
-    /* Agenda Mobile (Acordeones) */
-    .mobile-agenda { padding: 0 5px !important; }
-    .mobile-agenda details { width: 100%; margin-bottom: 5px;}
+    /* Agenda Mobile (Acordeones Unidos y Sin Margen) */
+    .mobile-agenda { padding: 0 !important; margin-bottom: 0 !important; width: 100%; }
+    .mobile-agenda details { width: 100%; margin-bottom: 0 !important; border-radius: 0; } 
     .mobile-agenda details:nth-child(1) { background-color: #fbc27b; color: #000; }
     .mobile-agenda details:nth-child(2) { background-color: #f9a646; color: #000; }
     .mobile-agenda details:nth-child(3) { background-color: #f78c21; color: #000; }
-    .mobile-agenda summary { padding: 20px 25px; list-style: none; cursor: pointer;}
+    .mobile-agenda summary { padding: 20px 25px; list-style: none; cursor: pointer; border-bottom: 1px solid rgba(0,0,0,0.1); }
     .mobile-agenda summary::-webkit-details-marker { display: none; }
     .summary-content { display: flex; justify-content: space-between; align-items: center; }
     .text-dia strong { font-size: 1.8rem; display: block; }
@@ -438,28 +448,31 @@ nav a:hover { color: var(--color-principal); }
     .icon-arrow::after { content: '∨'; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s; }
     details[open] .icon-arrow::after { transform: rotate(180deg); }
 
-    /* Mapa Mobile - Fondo marrón distintivo */
-    .mapa-contenedor { padding: 0 10px !important; margin-bottom: 15px !important; }
-    .mapa-contenedor img { transform: scale(1.03); } /* Aumenta tamaño óptico */
-    .mapa-aviso { margin-top: 15px; padding: 12px; width: 95%; margin-left: auto; margin-right: auto; font-size: 0.9rem; }
+    /* Mapa Mobile - Fin de sección exacto */
+    .mapa-contenedor { padding: 0 10px !important; margin-bottom: 0 !important; }
+    .mapa-contenedor img { transform: scale(1.03); } 
     .mapa-aviso {
-        background-color: #b07d54; /* Marrón más claro y diferencial */
+        background-color: #b07d54; 
         padding: 15px;
-        margin-top: 30px;
-        border-radius: 8px;
+        margin-top: 20px;
+        border-radius: 0; 
         text-align: center;
         width: 100%;
+        font-size: 0.9rem;
+        margin-bottom: 0 !important; 
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Invitados Mobile - Ajuste a nueva estructura de franja lateral */
+    /* Invitados Mobile - Tarjetas compactas exactas al diseño */
     .contenedor-tarjetas { grid-template-columns: 1fr; padding: 0; gap: 12px; }
-    .hero-card { height: 110px; } /* Reducción estricta de altura */
+    .hero-card { height: 110px; }
     .hero-card img { width: 110px; height: 110px; }
     .info-invitado { padding: 0; }
     .info-invitado h3 { font-size: 1.15rem; margin-bottom: 2px; margin-top: 10px; padding: 0 15px; }
     .info-invitado p { font-size: 0.65rem; padding: 0 15px; margin-bottom: 0; }
     .info-invitado .tag { width: 100%; font-size: 0.55rem; padding: 6px 15px; height: auto; text-align: left; }
-   
+
     /* Carrusel Mobile */
     .carousel { padding: 20px 0; }
     .carousel-viewport { width: 280px; }
