@@ -1,20 +1,24 @@
-/* base */
-:root {
-    --site-width: 1200px;
-    --color-principal: #f37820; 
-    --color-fondo-oscuro: #111111;
-    --color-fondo-marron: #4a3325;
-    --color-fondo-marron-oscuro: #31221a;
-    --color-fondo-claro: #f1ebd9;
-    --color-texto-blanco: #ffffff;
-    --color-texto-negro: #000000;
-    --fuente-principal: 'Montserrat', sans-serif;
-    --nav-height: 80px;
-}
+/* ==========================================================================
+   1. VARIABLES Y RESET GENERAL
+========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @font-face {
     font-family: 'bison';
     src: url('Bison-Bold(PersonalUse).ttf') format('truetype');
+}
+
+:root {
+    --nav-height: 80px;
+    --site-width: 1200px;
+    --color-principal: #f37820; 
+    --color-fondo-oscuro: #111111;
+    --color-fondo-marron: #4a3325;
+    --color-fondo-marron-oscuro: #2a1b14;
+    --color-fondo-claro: #f1ebd9;
+    --color-texto-blanco: #ffffff;
+    --color-texto-negro: #000000;
+    --fuente-principal: 'Montserrat', sans-serif;
 }
 
 * {
@@ -25,7 +29,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--nav-height); /* Corrige que el menú tape títulos al navegar */
+    scroll-padding-top: var(--nav-height); 
 }
 
 body {
@@ -33,6 +37,7 @@ body {
     background-color: var(--color-fondo-oscuro);
     color: var(--color-texto-blanco);
     line-height: 1.6;
+    overflow-x: hidden; /* Garantiza que nunca haya scroll horizontal */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,58 +58,12 @@ img {
     max-width: 100%;
 }
 
-.full-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: calc(var(--nav-height) + 20px) 20px 40px 20px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+.mobile-only { display: none !important; }
+.desktop-only { display: block; }
 
-.content {
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.btn-orange {
-    display: inline-block;
-    background-color: var(--color-principal);
-    color: var(--color-texto-blanco);
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 40px;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 1px;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.2s, background-color 0.2s;
-    margin-top: 20px;
-}
-
-.btn-orange:hover {
-    transform: scale(1.05);
-    background-color: #d15610;
-}
-
-.mobile-only {
-    display: none !important;
-}
-.desktop-only {
-    display: block;
-}
-
-/* nav */
+/* ==========================================================================
+   2. NAVEGACIÓN (NAVBAR)
+========================================================================== */
 header {
     background-color: #000000;
     height: var(--nav-height);
@@ -113,14 +72,15 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 1px solid #222;
     display: flex;
     align-items: center;
 }
 
 .nav-container {
     width: 100%;
-    padding: 0 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,32 +123,76 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* hero */
-.hero-bg {
-    background-image: url('imagenes/imagen\ de\ fondo\ pagina\ 1.jpeg');
+/* ==========================================================================
+   3. ESTRUCTURA PANTALLA COMPLETA (FULL PAGE LAYOUT)
+========================================================================== */
+.full-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--nav-height); /* Evita que el navbar tape contenido */
 }
 
-.hero-date {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+/* Contenedor principal de cada sección */
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Estira el contenido para llenar el 100vh */
+}
+
+/* Botón naranja universal */
+.btn-orange {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: var(--color-texto-blanco);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 40px; /* Bordes totalmente redondeados tipo pastilla */
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform 0.2s, background-color 0.2s;
+    text-align: center;
+}
+
+.btn-orange:hover {
+    transform: scale(1.05);
+    background-color: #d15610;
+}
+
+/* ==========================================================================
+   4. SECCIÓN 1: HERO
+========================================================================== */
+.hero-bg {
+    background-image: url('imagenes/imagen\ de\ fondo\ pagina\ 1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#hero .content {
+    justify-content: center; /* Centrado perfecto vertical */
+    align-items: center;
+    padding: 20px;
 }
 
 .hero-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .dungeon-heroes-title {
-    color: #f1ebd9;
-    font-size: 7rem;
+    color: var(--color-fondo-claro);
+    font-size: 8rem;
     font-weight: 900;
     letter-spacing: 8px;
-    line-height: 0.75; /* Acerca FESTIVAL a DUNGEON HEROES */
-    margin-bottom: -10px; /* Reducción de separación del bloque */
+    line-height: 0.8;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
     display: block;
 }
@@ -199,164 +203,126 @@ nav a:hover {
     font-weight: 900;
     letter-spacing: 6px;
     line-height: 1;
-    text-shadow:
-        4px 4px 0px var(--color-principal),
-        8px 8px 15px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 0px var(--color-principal), 6px 6px 15px rgba(0,0,0,0.9);
     display: block;
-}
-
-.hero-location {
-    font-family: var(--fuente-principal);
-    font-style: italic;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    letter-spacing: normal;
+    margin-top: -10px;
 }
 
 .hero-text p {
-    font-size: 1.3rem; 
-    max-width: 900px; /* Ensanchado para ocupar más espacio en desktop */
+    font-size: 1.3rem;
+    max-width: 800px;
     margin: 0 auto 5px auto;
     font-weight: 600;
+    text-align: center;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
 }
 
-/* portal */
+#hero .btn-orange {
+    margin-top: 30px;
+}
+
+/* ==========================================================================
+   5. SECCIÓN 2: PORTAL
+========================================================================== */
 .brick-bg {
     background-image: url('imagenes/imagen\ de\ fondo\ pagina2-3-4.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 #portal .content {
-    transform: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 #portal h2 {
-    font-size: 5rem !important;
-    margin-bottom: 30px;
-    line-height: 1;
-}
-
-#portal .text-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 5rem;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 #portal .text-block p {
     font-family: var(--fuente-principal);
-    font-size: 1.5rem; 
-    max-width: 1000px; /* Ensanchado del bloque para ocupar más ancho de pantalla */
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    max-width: 900px;
+    margin-bottom: 35px;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: center;
 }
 
+/* ==========================================================================
+   6. BLOQUES DE CABECERA (MARRÓN OSCURO) - 100% ANCHO
+========================================================================== */
+#eventos, #mapa, #invitados, #registro {
+    background-color: var(--color-fondo-marron);
+}
+
+/* Titulos y subtitulos ocupando todo el ancho de forma natural */
 #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-    font-size: 4rem;
-    background-color: #31221a;
+    background-color: var(--color-fondo-marron-oscuro);
     width: 100%;
+    text-align: center;
     padding: 60px 20px 10px 20px;
-    margin-bottom: 0;
-    line-height: 1;
+    margin: 0;
+    font-size: 3.5rem;
 }
 
 #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-    background-color: #31221a;
+    background-color: var(--color-fondo-marron-oscuro);
     width: 100%;
-    padding: 10px 20px 60px 20px;
-    margin-bottom: 0;
-}
-
-/* fondos unificados (marrón más claro) */
-#eventos, #mapa, #registro {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    background-color: #594336; 
-    justify-content: flex-start; /* Evita centrado vertical flotante en desktop */
-}
-
-#invitados {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    background-image: none !important;
-    background-color: #594336 !important;
-    width: 100%;
-    justify-content: flex-start; /* Evita centrado vertical flotante en desktop */
-}
-
-.contenedor-tarjetas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%; 
-    max-width: 100%;
+    text-align: center;
+    padding: 10px 20px 50px 20px;
     margin: 0;
-    gap: 2px; 
-    background-color: transparent; 
+    font-size: 1.2rem;
 }
 
-#zonas-actividades {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-}
-
-#eventos .content, #mapa .content, #invitados .content, #zonas-actividades .content, #registro .content {
-    max-width: 90%; /* Margen sutil a los costados para desktop */
-}
-
-/* eventos y calendario */
-.calendar-table.desktop-only {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
+/* Contenedores internos centrados (Agenda, Mapa, Carrusel, etc) */
+.calendar-table, 
+.mobile-agenda, 
+.mapa-contenedor, 
+.contenedor-tarjetas, 
+.carousel, 
+.form-container {
     width: 100%;
-    max-width: 100%;
-    text-align: left;
-    color: var(--color-texto-negro);
-    margin-bottom: 0px;
-    flex-grow: 1; /* Estira el cronograma hasta la parte inferior de la sección */
-    padding-bottom: 60px;
+    max-width: var(--site-width);
+    margin: auto; /* Centra el contenido vertical y horizontalmente en el espacio restante */
+    padding: 60px 20px;
 }
+
+/* ==========================================================================
+   7. SECCIÓN 3: EVENTOS (AGENDA)
+========================================================================== */
+.calendar-table.desktop-only {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--color-texto-negro);
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.day-1 { background-color: #fbc27b; } 
+.day-2 { background-color: #f9a646; }
+.day-3 { background-color: #f78c21; }
 
 .calendar-table .col {
-    padding: 40px 5vw; 
+    padding: 40px 30px;
     border-right: 1px solid rgba(0,0,0,0.1);
 }
-
-.calendar-table .col:last-child {
-    border-right: none;
-}
-
-.day-1 { background-color: #f5b76b; }
-.day-2 { background-color: #f7a94a; }
-.day-3 { background-color: #f99b29; }
+.calendar-table .col:last-child { border-right: none; }
 
 .col-header {
     border-bottom: 3px solid var(--color-texto-negro);
     margin-bottom: 25px;
     padding-bottom: 10px;
 }
+.col-header h3 { font-size: 2.5rem; margin-bottom: 5px; }
+.col-header p { font-size: 0.85rem; font-weight: 700; }
 
-.col-header h3 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-}
-
-.col-header p {
-    font-size: 0.85rem;
-    font-family: var(--fuente-principal);
-    font-weight: 700;
-}
-
-/* línea recta mágica para el calendario */
 .col ul, .panel-desplegable ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     position: relative;
     z-index: 1;
 }
@@ -364,7 +330,7 @@ nav a:hover {
 .col ul::before, .panel-desplegable ul::before {
     content: '';
     position: absolute;
-    left: 50px; 
+    left: 45px; 
     top: 5px;
     bottom: 5px;
     width: 2px;
@@ -373,13 +339,11 @@ nav a:hover {
 }
 
 .col li, .panel-desplegable li {
-    position: relative;
     display: flex;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: 15px;
     margin-bottom: 15px;
     font-size: 0.85rem;
-    font-family: var(--fuente-principal);
     font-weight: 700;
     text-align: left;
 }
@@ -387,125 +351,115 @@ nav a:hover {
 .col li strong, .panel-desplegable li strong {
     width: 45px; 
     flex-shrink: 0;
-    border-right: none; 
-    padding-right: 0;
 }
 
-/* mapita */
-#mapa {
-    padding-bottom: 60px;
-}
-
+/* ==========================================================================
+   8. SECCIÓN 4: MAPA
+========================================================================== */
 .mapa-contenedor {
-    width: 100%;
-    max-width: 1400px; /* Agrandado del mapa en desktop */
-    margin: 60px auto 0 auto;
-    padding: 0 20px;
+    max-width: 1300px; /* Mapa un poco más grande */
 }
-
 .mapa-contenedor img {
     width: 100%;
     height: auto;
-    border-radius: 0;
-    box-shadow: none;
-    display: block;
 }
 
-.mapa-aviso {
-    background-color: transparent; 
-    color: var(--color-texto-blanco);
-    width: 100%;
-    margin-top: 15px;
-    padding: 10px 15px;
-    font-family: var(--fuente-principal);
-    font-size: 1rem;
-    font-weight: 600;
+/* ==========================================================================
+   9. SECCIÓN 5: INVITADOS
+========================================================================== */
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-/* invitados (tarjetas) */
 .hero-card {
     display: flex;
-    background-color: #6d4b38; 
-    text-align: left;
-    border: none;
+    background-color: #684935; 
     height: 200px;
 }
 
 .hero-card img {
     width: 200px; 
-    height: 200px; 
+    height: 100%; 
     object-fit: cover;
     filter: grayscale(100%);
     flex-shrink: 0;
 }
 
 .info-invitado {
-    width: calc(100% - 200px); 
+    padding: 20px 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    padding: 0; 
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
 }
 
 .info-invitado h3 {
-    padding: 20px 25px 5px 25px;
-    font-size: 2.2rem;
-    margin-bottom: 0;
+    font-size: 2rem;
+    margin-bottom: 5px;
     line-height: 1.1;
 }
 
 .info-invitado p {
-    padding: 0 25px 15px 25px;
-    font-family: var(--fuente-principal);
     font-size: 0.85rem;
     font-weight: 600;
     color: #e0e0e0;
-    margin-bottom: auto; 
     text-transform: uppercase;
 }
 
 .info-invitado .tag {
-    background-color: #422d22; 
+    background-color: #2f1d13; 
     color: #dcdcdc;
-    font-family: var(--fuente-principal);
     font-size: 0.75rem;
-    text-transform: uppercase;
     font-weight: 700;
-    padding: 12px 25px;
-    width: 100%;
-    display: block;
+    padding: 10px 20px;
+    align-self: flex-start; /* Evita que ocupe todo el ancho */
 }
 
-/* carrusel */
+/* ==========================================================================
+   10. SECCIÓN 6: CARRUSEL
+========================================================================== */
 .carousel {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    width: 100%;
-    padding: 60px 5vw;
+    gap: 20px;
 }
 
+/* Ancho exacto para 3 cartas de 350px + 2 gaps de 30px = 1110px */
 .carousel-viewport {
     overflow: hidden;
-    width: 100%;
-    max-width: 1300px; /* Ensanchado para aprovechar más pantalla */
+    width: 1110px; 
 }
 
 .carousel-track {
     display: flex;
     gap: 30px;
     transition: transform 0.5s ease-in-out;
-    will-change: transform;
 }
 
 .card-actividad {
     flex-shrink: 0;
-    width: 380px; /* Agrandadas las tarjetas en desktop */
-    background-color: #f5b76b; /* Color corregido al naranja claro (Viernes) */
+    width: 350px; 
+    background-color: #f78c21; 
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
+}
+
+.card-actividad img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-actividad h3 {
+    font-size: 2.2rem;
+    color: var(--color-texto-blanco);
 }
 
 .arrow {
@@ -516,34 +470,16 @@ nav a:hover {
     cursor: pointer;
     font-family: monospace;
     transition: transform 0.2s;
-    padding: 0 10px;
 }
 
-.arrow:hover {
-    transform: scale(1.2);
-}
+.arrow:hover { transform: scale(1.2); }
 
-.card-actividad img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.card-actividad h3 {
-    font-size: 2.2rem;
-    color: var(--color-texto-blanco);
-    line-height: 1;
-}
-
-/* registro */
+/* ==========================================================================
+   11. SECCIÓN 7: REGISTRO (FORMULARIO)
+========================================================================== */
 .form-container {
-    width: 100%;
-    max-width: 750px; /* Agrandado del formulario */
+    max-width: 650px; 
     text-align: left;
-    margin: 60px auto;
-    padding: 0 20px;
 }
 
 .input-group {
@@ -554,7 +490,6 @@ nav a:hover {
 
 .input-group label {
     color: var(--color-texto-blanco);
-    font-family: var(--fuente-principal);
     font-weight: 600;
     margin-bottom: 8px;
     font-size: 1.1rem;
@@ -562,50 +497,41 @@ nav a:hover {
 
 .input-group input,
 .input-group select {
-    padding: 15px 20px;
+    padding: 18px 20px;
     border: none;
     border-radius: 8px;
     background-color: var(--color-fondo-claro);
     font-size: 1rem;
     font-family: var(--fuente-principal);
     color: #555555; 
-    width: 100%;
-}
-
-.input-group select option {
-    color: #555555;
 }
 
 .form-container .btn-orange {
-    width: auto;
-    padding: 15px 60px;
     display: block;
-    margin: 60px auto 0 auto; /* Más separación del botón */
-    border-radius: 8px;
-    font-family: var(--fuente-principal);
+    margin: 40px auto 0 auto; 
 }
 
-/* footer */
+/* ==========================================================================
+   12. FOOTER
+========================================================================== */
 .site-footer {
     background-color: #000000;
     padding: 60px 40px; 
-    border-top: 1px solid #1a1a1a;
 }
 
 .footer-container {
-    max-width: 1200px; 
+    max-width: var(--site-width); 
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer-copyright {
-    font-size: 0.85rem;
-    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
     font-weight: 800;
     margin-bottom: 30px;
-    color: var(--color-texto-blanco);
 }
 
 .footer-columns {
@@ -618,45 +544,28 @@ nav a:hover {
 .footer-col {
     display: flex;
     flex-direction: column;
-    flex: 1; 
+    align-items: flex-start;
 }
 
 .footer-ayuda h3, 
 .footer-social h3 {
-    font-family: var(--fuente-principal);
     font-size: 1.3rem;
     font-weight: 800;
     margin-bottom: 15px;
-    letter-spacing: normal;
-    text-transform: uppercase;
-}
-
-.footer-ayuda {
-    align-items: flex-start;
 }
 
 .footer-ayuda a {
-    font-family: var(--fuente-principal);
     color: #cccccc;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.2s;
 }
-
-.footer-ayuda a:hover {
-    color: var(--color-principal);
-}
+.footer-ayuda a:hover { color: var(--color-principal); }
 
 .vertical-line {
     width: 1px;
     height: 90px;
-    background-color: #ffffff;
-    opacity: 0.3;
-    margin: 0 50px; 
-}
-
-.footer-social {
-    align-items: center; 
+    background-color: rgba(255,255,255,0.3);
 }
 
 .social-links {
@@ -671,347 +580,183 @@ nav a:hover {
     border-radius: 50%;
     object-fit: contain;
     padding: 10px;
-    transition: transform 0.2s;
-}
-
-.social-links img:hover {
-    transform: scale(1.1);
 }
 
 .footer-sponsors {
-    align-items: flex-start;
     gap: 20px; 
-    padding-left: 40px;
 }
+.footer-sponsors img { height: 40px; object-fit: contain;}
 
-.logo-ign {
-    height: 35px; 
-    width: auto;
-    object-fit: contain;
-}
 
-.logo-steam {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
-    margin-left: -2px;
-}
-
-.logo-itch {
-    height: 45px; 
-    width: auto;
-    object-fit: contain;
-}
-
-/* modales */
-.modal-overlay {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-beige {
-    background-color: var(--color-fondo-claro); 
-    color: #000000;
-    padding: 60px 50px; 
-    position: relative;
-    text-align: center;
-    max-width: 600px;
-    width: 90%;
-    border-radius: 0; 
-}
-
-.modal-titulo-dinamico {
-    font-family: var(--fuente-principal); 
-    font-weight: 800;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    line-height: 1.3;
-    text-transform: none; 
-}
-
-.modal-texto-dinamico {
-    font-family: var(--fuente-principal);
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #555555;
-    line-height: 1.5;
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: #000000;
-    line-height: 1;
-}
-
-.mapa-zoom {
-    max-width: 95vw;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 5px;
-}
-
-/* ==========================================
-   SECCIONES A PANTALLA COMPLETA (DESKTOP)
-   (Movido antes de las Queries de Mobile)
-========================================== */
-#portal,
-#eventos,
-#invitados,
-#zonas-actividades {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-
-#portal .content {
-    transform: none;
-    min-height: calc(100vh - var(--nav-height));
-    justify-content: center;
-}
-
-#eventos .content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-#invitados .content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-#zonas-actividades .content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ===================================================================
-   OPTIMIZACIÓN EXCLUSIVA PARA DESKTOP 1366x768 
-=================================================================== */
-@media (max-width: 1366px) and (min-width: 769px) {
-    .dungeon-heroes-title { font-size: 5.5rem; }
-    .main-festival-title { font-size: 3.2rem; }
-    .hero-location { font-size: 1.2rem; margin-bottom: 15px; }
-    .hero-text p { font-size: 1.1rem; }
-    
-    #portal h2 { font-size: 3.8rem !important; }
-    #portal .text-block p { font-size: 1.1rem; margin-bottom: 15px; }
-    
-    #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 3.2rem;
-        padding-top: 40px;
-    }
-    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        padding-bottom: 40px;
-    }
-    
-    .calendar-table .col { padding: 30px 3vw; }
-    .col-header h3 { font-size: 2rem; }
-    
-    .hero-card { height: 160px; }
-    .hero-card img { width: 160px; height: 160px; }
-    .info-invitado { width: calc(100% - 160px); }
-    .info-invitado h3 { font-size: 1.6rem; padding: 15px 15px 5px 15px; }
-    .info-invitado p { padding: 0 15px 10px 15px; font-size: 0.75rem; }
-    .info-invitado .tag { padding: 8px 15px; }
-}
-
-/* ===================================================================
-   OPTIMIZACIÓN EXCLUSIVA PARA CELULARES (MOBILE 412x917)
-=================================================================== */
+/* ==========================================================================
+   13. MEDIA QUERIES - OPTIMIZACIÓN MÓVIL (MOBILE)
+========================================================================== */
 @media (max-width: 768px) {
     
-    /* MOBILE SIN ESPACIOS VACÍOS */
-    .full-page {
-        min-height: auto !important; /* Rompe el 100vh heredado que creaba huecos */
-        padding-top: calc(var(--nav-height) + 20px);
-        padding-bottom: 30px !important;
-    }
-
-    #portal .content,
-    #eventos .content,
-    #invitados .content,
-    #zonas-actividades .content,
-    #registro .content {
-        min-height: auto !important;
-        max-width: 100% !important; /* Desactiva el 90% de escritorio para cubrir todo el ancho */
-    }
-
-    #portal,
-    #eventos,
-    #invitados,
-    #zonas-actividades {
-        min-height: auto !important;
-        display: block; 
-    }
-
-    .mobile-agenda {
-        margin-bottom: 0;
-        width: 100vw; 
-        margin-top: 0;
-    }
-
-    .carousel {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .form-container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    
-    /* Pantalla 1: Ajuste de títulos compactos en un renglón */
-    .dungeon-heroes-title {
-        font-size: 2.8rem !important; 
-        letter-spacing: 4px;
-        line-height: 0.8;
-        margin-bottom: 0px;
-    }
-    .main-festival-title { 
-        font-size: 1.4rem !important; 
-        letter-spacing: 2px;
-        margin-top: 5px;
-    }
-    
-    #hero .hero-location { font-size: 1.1rem; margin-bottom: 20px; }
-    #hero .hero-text p { font-size: 1rem; }
-    
-    /* Pantalla 2: Título más grande */
-    #portal h2 { 
-        font-size: 2.2rem !important; 
-        letter-spacing: 1px !important;
-        margin-bottom: 20px; 
-    }
-    #portal .text-block p { font-size: 1rem !important; margin-bottom: 20px; }
-    #portal .text-block p br { display: none; }
-
-    /* Títulos de secciones adaptados a móvil */
-    #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
-        font-size: 1.3rem !important; 
-        letter-spacing: 1px !important; 
-        padding: 30px 10px 10px 10px !important; 
-        line-height: 1.2;
-    }
-    
-    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
-        padding: 10px 15px 40px 15px !important;
-        font-size: 1rem !important;
-    }
-
-    .nav-container { padding: 0 20px; }
-    
-    .hamburger-menu { display: flex; }
-    
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: var(--nav-height);
-        left: 0;
-        width: 100%;
-        background-color: #000000;
-        padding: 20px 0;
-        border-top: 1px solid #222;
-        gap: 25px;
-    }
-    
-    nav ul.active { display: flex; }
-    nav a { font-size: 1.1rem; }
-
     .desktop-only { display: none !important; }
     .mobile-only { display: block !important; }
 
-    .mobile-agenda details {
-        background-color: #f5b76b;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    /* Navbar Mobile */
+    .nav-container { padding: 0 20px; }
+    .hamburger-menu { display: flex; }
+    nav ul {
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: var(--nav-height); 
+        left: 0; 
         width: 100%;
+        background-color: #000000; 
+        padding: 20px 0; 
+        border-top: 1px solid #222; 
+        gap: 25px;
+        text-align: center;
     }
-    .mobile-agenda details:nth-child(2) { background-color: #f7a94a; }
-    .mobile-agenda details:nth-child(3) { background-color: #f99b29; }
-    .mobile-agenda summary {
-        padding: 25px 30px; list-style: none; cursor: pointer; outline: none;
+    nav ul.active { display: flex; }
+
+    /* Forzar que cada sección ocupe exactamente 100vh en móvil sin cortes */
+    .full-page {
+        min-height: 100vh;
+        padding-top: var(--nav-height);
     }
+
+    /* Hero Mobile */
+    .dungeon-heroes-title {
+        font-size: 4.5rem; 
+        line-height: 0.8;
+        margin-bottom: 0px; /* Lo pegamos al texto de abajo */
+    }
+    .main-festival-title { 
+        font-size: 2.2rem; 
+        margin-top: 5px;
+    }
+    #hero .hero-text p { font-size: 1.1rem; padding: 0 10px; }
+    #hero .btn-orange { width: 100%; max-width: 320px; padding: 15px 10px; font-size: 0.9rem;}
+
+    /* Portal Mobile */
+    #portal h2 { font-size: 2.5rem; margin-bottom: 30px; }
+    #portal .text-block p { font-size: 1.1rem; margin-bottom: 20px; padding: 0 10px;}
+    #portal .text-block p br { display: none; }
+
+    /* Cabeceras Mobile */
+    #eventos h2, #mapa h2, #invitados h2, #zonas-actividades h2, #registro h2 {
+        font-size: 2rem; 
+        padding: 40px 20px 10px 20px;
+    }
+    #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
+        font-size: 1rem;
+        padding: 10px 20px 30px 20px;
+    }
+
+    /* Contenedores internos Mobile */
+    .calendar-table, 
+    .mobile-agenda, 
+    .mapa-contenedor, 
+    .contenedor-tarjetas, 
+    .carousel, 
+    .form-container {
+        padding: 20px;
+    }
+
+    /* Agenda Mobile (Acordeones) */
+    .mobile-agenda { padding: 0 !important; }
+    .mobile-agenda details { width: 100%; margin-bottom: 2px;}
+    .mobile-agenda details:nth-child(1) { background-color: #fbc27b; color: #000; }
+    .mobile-agenda details:nth-child(2) { background-color: #f9a646; color: #000; }
+    .mobile-agenda details:nth-child(3) { background-color: #f78c21; color: #000; }
+    
+    .mobile-agenda summary { padding: 20px 25px; list-style: none; cursor: pointer;}
     .mobile-agenda summary::-webkit-details-marker { display: none; }
-    .summary-content {
-        display: flex; justify-content: space-between; align-items: center; color: var(--color-texto-negro);
-    }
-    .text-dia { text-align: left; display: flex; flex-direction: column; }
-    .text-dia strong { font-size: 1.6rem; font-weight: 800; font-family: var(--fuente-principal); }
-    .text-dia span { font-size: 0.85rem; font-weight: 600; font-family: var(--fuente-principal); }
     
-    .panel-desplegable { padding: 10px 30px 30px 30px; text-align: left; color: var(--color-texto-negro); }
-    
-    .icon-arrow::after {
-        content: '∨'; font-weight: bold; font-size: 1.4rem; transition: transform 0.3s ease; display: inline-block;
+    .summary-content { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
     }
+    .text-dia strong { font-size: 1.8rem; display: block; }
+    .text-dia span { font-size: 0.9rem; }
+    
+    .panel-desplegable { padding: 10px 25px 25px 25px; }
+    .icon-arrow::after { content: '∨'; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s; }
     details[open] .icon-arrow::after { transform: rotate(180deg); }
 
-    .contenedor-tarjetas { 
-        grid-template-columns: 1fr; 
-        width: 100%; 
-        margin: 0; 
-    }
-    
-    /* Pantalla 5: Altura automática para evitar cortes en textos largos */
-    .hero-card { 
-        height: auto; 
-        min-height: 150px;
-    } 
-    .hero-card img { width: 150px; height: 150px; }
-    .info-invitado { width: calc(100% - 150px); }
-    .info-invitado h3 { font-size: 1.1rem; padding: 15px 15px 2px 15px; }
-    .info-invitado p { padding: 0 15px 10px 15px; font-size: 0.75rem; }
-    .info-invitado .tag { font-size: 0.55rem; padding: 8px 10px; }
-
-    /* Pantalla 6: Carrusel adaptable por porcentajes */
-    .carousel { padding: 40px 5px; gap: 5px; }
-    .carousel-viewport { max-width: 80vw; }
-    .card-actividad { width: 80vw; max-width: 280px; padding: 15px; }
-    .card-actividad img { height: 230px; }
-    .arrow { font-size: 2.5rem; padding: 0 2px; }
-
-    /* Pantalla 7: Registro con espaciado correcto a los bordes */
-    .form-container { padding: 0 20px; margin: 30px auto; width: 100%; box-sizing: border-box; }
-
-    .footer-columns { flex-direction: column; gap: 40px; }
-    .vertical-line { display: none; }
-    .footer-col { align-items: center !important; text-align: center; }
-    .footer-sponsors { padding-left: 0; }
-    
-    .modal-beige { padding: 40px 20px; }
-    .modal-titulo-dinamico { font-size: 1.5rem; }
-    .modal-texto-dinamico { font-size: 1rem; }
-    
-    /* Botón en un solo renglón */
-    .btn-orange {
-        font-size: 0.8rem; 
-        padding: 12px 15px; 
-        white-space: nowrap; 
-        width: 100%;
-        max-width: 280px; 
-    }
-
-    /* Recuadro del aviso del mapa con fondo oscuro unificado */
+    /* Mapa Mobile */
     .mapa-aviso {
-        background-color: #4a3325; 
-        border-radius: 8px; 
-        margin: 20px 20px 0 20px;
+        background-color: var(--color-fondo-marron-oscuro);
+        padding: 15px;
+        margin-top: 30px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* Invitados Mobile (Ocupan todo el ancho, 0 padding) */
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+        padding: 0; 
+        gap: 5px; 
+    }
+    .hero-card {
+        height: 130px; /* Tarjetas más bajas para que entren bien en el celular */
+    }
+    .hero-card img {
+        width: 130px; 
+    }
+    .info-invitado {
         padding: 15px;
     }
+    .info-invitado h3 { font-size: 1.3rem; margin-bottom: 0;}
+    .info-invitado p { font-size: 0.7rem; }
+    .info-invitado .tag { font-size: 0.6rem; padding: 6px 12px; }
+
+    /* Carrusel Mobile (1 sola carta visible de 280px) */
+    .carousel {
+        padding: 20px 10px;
+    }
+    .carousel-viewport {
+        width: 280px; 
+    }
+    .card-actividad {
+        width: 280px; 
+        padding: 15px;
+    }
+    .card-actividad img { height: 180px; }
+    .arrow { font-size: 3rem; padding: 0 5px;}
+
+    /* Formulario Mobile */
+    .form-container .btn-orange {
+        width: 100%;
+    }
+
+    /* Footer Mobile */
+    .site-footer { padding: 40px 30px; }
+    
+    .footer-columns {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Líneas horizontales divisorias estilo Mobile */
+    .footer-copyright {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-col {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    .footer-col:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
+    
+    .vertical-line { display: none; }
+    
+    .footer-sponsors {
+        display: flex;
+        flex-direction: column; /* Apilamos los sponsors verticalmente */
+        gap: 30px;
+    }
+    .footer-sponsors img { height: 35px; }
 }
