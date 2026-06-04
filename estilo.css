@@ -264,11 +264,9 @@ nav a:hover {
 
 #eventos .subtitle, #mapa .subtitle, #invitados .subtitle, #zonas-actividades .subtitle, #registro .subtitle {
     background-color: #31221a;
-    width: 100vw;
+    width: 100%;
     padding: 10px 20px 60px 20px;
     margin-bottom: 0;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
 }
 
 /* fondos unificados (marrón más claro) */
@@ -308,8 +306,7 @@ nav a:hover {
 }
 
 #eventos .content, #mapa .content, #invitados .content, #zonas-actividades .content, #registro .content {
-    width: 100%;
-    max-width: 100%; 
+    max-width: 90%; /* Margen sutil a los costados para desktop */
 }
 
 /* eventos y calendario */
@@ -322,7 +319,7 @@ nav a:hover {
     color: var(--color-texto-negro);
     margin-bottom: 0px;
     flex-grow: 1; /* Estira el cronograma hasta la parte inferior de la sección */
-    padding-bottom: 0px;
+    padding-bottom: 60px;
 }
 
 .calendar-table .col {
@@ -492,12 +489,12 @@ nav a:hover {
 .carousel-viewport {
     overflow: hidden;
     width: 100%;
-    max-width: 1180px;
+    max-width: 1300px; /* Ensanchado para aprovechar más pantalla */
 }
 
 .carousel-track {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
 }
@@ -505,7 +502,7 @@ nav a:hover {
 .card-actividad {
     flex-shrink: 0;
     width: 380px; /* Agrandadas las tarjetas en desktop */
-    background-color: #f99b29;
+    background-color: #f5b76b; /* Color corregido al naranja claro (Viernes) */
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -776,13 +773,13 @@ nav a:hover {
 #zonas-actividades {
     min-height: 100vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 #portal .content {
     transform: none;
     min-height: calc(100vh - var(--nav-height));
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #eventos .content {
@@ -841,18 +838,10 @@ nav a:hover {
     
     /* MOBILE SIN ESPACIOS VACÍOS */
     .full-page {
-    min-height: auto !important;
-    padding-top: calc(var(--nav-height) + 20px);
-    padding-bottom: 30px !important;
-}
+        min-height: auto !important; /* Rompe el 100vh heredado que creaba huecos */
+        padding-top: calc(var(--nav-height) + 20px);
+        padding-bottom: 30px !important;
     }
-    #hero {
-    min-height: 100vh !important;
-}
-
-#portal {
-    min-height: 100vh !important;
-}
 
     #portal .content,
     #eventos .content,
@@ -860,24 +849,21 @@ nav a:hover {
     #zonas-actividades .content,
     #registro .content {
         min-height: auto !important;
-        max-width: 100% !important; 
+        max-width: 100% !important; /* Desactiva el 90% de escritorio para cubrir todo el ancho */
     }
 
-   #portal {
-    min-height: 100vh !important;
-}
-   #eventos,
-   #invitados,
-   #zonas-actividades {
-    min-height: auto !important;
-}
-   }
+    #portal,
+    #eventos,
+    #invitados,
+    #zonas-actividades {
+        min-height: auto !important;
+        display: block; 
+    }
+
     .mobile-agenda {
-        width: 100vw;
-        min-height: calc(100vh - 180px);
-        margin: 0;
-        display: flex;
-       flex-direction: column;
+        margin-bottom: 0;
+        width: 100vw; 
+        margin-top: 0;
     }
 
     .carousel {
@@ -955,7 +941,6 @@ nav a:hover {
         background-color: #f5b76b;
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
         width: 100%;
-        flex: 1;
     }
     .mobile-agenda details:nth-child(2) { background-color: #f7a94a; }
     .mobile-agenda details:nth-child(3) { background-color: #f99b29; }
@@ -996,7 +981,7 @@ nav a:hover {
 
     /* Pantalla 6: Carrusel adaptable por porcentajes */
     .carousel { padding: 40px 5px; gap: 5px; }
-    .carousel-viewport { width: 100%; max-width: 280px; }
+    .carousel-viewport { max-width: 80vw; }
     .card-actividad { width: 80vw; max-width: 280px; padding: 15px; }
     .card-actividad img { height: 230px; }
     .arrow { font-size: 2.5rem; padding: 0 2px; }
